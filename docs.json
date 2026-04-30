@@ -86,12 +86,90 @@
               "manage-internal-numbers"
             ]
           },
-          "time-schedules",
+          {
+            "group": "Time schedules",
+            "pages": [
+              "time-schedules"
+            ]
+          },
           {
             "group": "Delivery methods",
             "pages": [
               "manage-delivery-methods",
               "review-delivery-logs"
+            ]
+          },
+          {
+            "group": "Audio Files",
+            "pages": [
+              "manage-audio-files",
+              "manage-playlists"
+            ]
+          },
+          {
+            "group": "Trunks",
+            "pages": [
+              "how-trunks-work-in-phone-systems",
+              "manage-inbound-trunks",
+              "manage-termination-gateways",
+              "manage-termination-routes"
+            ]
+          },
+          {
+            "group": "Call Analytics",
+            "pages": [
+              "call-flows-cdrs",
+              "termination-cdrs",
+              "call-statistics"
+            ]
+          },
+          {
+            "group": "Contacts",
+            "pages": [
+              "contacts"
+            ]
+          },
+          {
+            "group": "Settings",
+            "pages": [
+              "general-settings",
+              "domains",
+              "feature-codes",
+              {
+                "group": "CRM integrations",
+                "pages": []
+              },
+              {
+                "group": "Cloud storage integrations",
+                "pages": []
+              },
+              "ai-settings",
+              "app-activation-settings",
+              "interlinks",
+              "technical-information"
+            ]
+          },
+          {
+            "group": "Subscription details",
+            "pages": [
+              "subscription-details"
+            ]
+          },
+          {
+            "group": "phone.systems™ app",
+            "pages": [
+              "configure-phone-systems-app-1",
+              "use-dial-pad",
+              "manage-app-contacts",
+              "view-call-history",
+              "configure-app-settings",
+              {
+                "group": "Additional resources",
+                "pages": [
+                  "install-phone-systems-app-on-linux",
+                  "phone-systems-app-integration-protocols"
+                ]
+              }
             ]
           }
         ]
