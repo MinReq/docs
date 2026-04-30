@@ -1,0 +1,50 @@
+---
+title: "How emergency calling works"
+description: "Understand how Emergency Calling uses verified DID numbers, identity and address details, outbound trunks, and supported emergency numbers."
+---
+
+Emergency Calling allows supported DID numbers to place calls to local emergency service numbers through DIDWW. Each service must be linked to verified identity and address details so emergency calls can be routed with the correct caller location information.
+
+Use this page to understand the Emergency Calling model before creating a service, changing an emergency address, or configuring outbound trunks.
+
+## Emergency Calling model
+
+Emergency Calling connects four main parts:
+
+- a supported DID number
+- verified identity and address details
+- an active Emergency Calling service
+- an outbound trunk that is allowed to use the verified DID as the emergency caller ID
+
+When these parts are configured, the verified DID number can be used as the source number for supported emergency calls.
+
+## Identity and address verification
+
+Emergency Calling requires identity and address details that match the selected country and number type. These details are reviewed before the service becomes active.
+
+If verification requires changes, the service can move to **Changes Required** status. After the required identity or address information is updated, the request can be resubmitted.
+
+## Source numbers
+
+Source numbers are DID numbers enabled for Emergency Calling. Only DID numbers that support Emergency Calling can be selected.
+
+After a source number is verified and the service becomes active, that number can be used as the caller ID for supported emergency calls.
+
+## Outbound trunk routing
+
+Emergency calls are placed through outbound trunks. Once at least one Emergency Calling service is active, outbound trunks can be used for emergency call routing.
+
+If Outbound Termination is not enabled on the account, outbound trunks can still be used for emergency calls from verified DID source numbers. Local and international voice termination remains restricted until Outbound Termination is enabled.
+
+## Supported emergency numbers
+
+Emergency numbers vary by country and service availability. Emergency numbers must be dialed in the supported local format.
+
+Do not include the country code, `+`, or leading symbols unless the supported emergency number list explicitly requires them.
+
+## Related links
+
+- [Create Emergency Calling service](./create-emergency-calling-service) — Register supported DID numbers for Emergency Calling.
+- [Manage Emergency Calling service](./manage-emergency-calling-service) — Change address, resubmit verification, remove source numbers, or cancel service.
+- [Configure outbound trunks for Emergency Calling](./configure-emergency-calling-for-outbound-trunks) — Allow verified DIDs to place emergency calls through outbound trunks.
+- [Supported emergency numbers](./supported-emergency-numbers) — Review supported emergency numbers by country.

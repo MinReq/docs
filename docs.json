@@ -71,6 +71,50 @@
                   "assign-a-voice-trunk",
                   "inbound-number-lists"
                 ]
+              },
+              {
+                "group": "Outbound trunks",
+                "pages": [
+                  "how-outbound-trunk-works",
+                  "get-access-to-outbound-trunks",
+                  {
+                    "group": "Manage outbound trunks",
+                    "pages": [
+                      "create-outbound-trunk",
+                      "view-outbound-trunk-credentials",
+                      "edit-outbound-trunks",
+                      "enable-or-disable-outbound-trunks",
+                      "delete-outbound-trunks"
+                    ]
+                  },
+                  {
+                    "group": "Technical specifications",
+                    "pages": [
+                      "sip-protocol-details",
+                      "outbound-dialing",
+                      "call-forwarding",
+                      "outbound-sip-trunk-security",
+                      "call-flow-examples",
+                      "stir-shaken",
+                      "spam-or-scam-likely-labels",
+                      "robocall-mitigation-database"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Emergency Calling",
+                "pages": [
+                  "how-emergency-calling-works",
+                  "create-emergency-calling-service",
+                  "manage-emergency-calling-service",
+                  "configure-outbound-trunks-for-emergency-calling",
+                  "supported-emergency-numbers"
+                ]
+              },
+              {
+                "group": "CNAM",
+                "pages": []
               }
             ]
           }
