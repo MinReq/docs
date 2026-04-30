@@ -34,22 +34,29 @@
       },
       {
         "tab": "phone.systems™",
-        "dropdowns": [
+        "products": [
           {
-            "dropdown": "Untitled Dropdown",
-            "groups": [
+            "product": "Untitled Product",
+            "pages": [
+              "untitled-page",
+              "untitled-page"
+            ]
+          },
+          {
+            "product": "Untitled Product",
+            "tabs": [
               {
-                "group": "Untitled Group",
+                "tab": "Untitled Tab",
                 "pages": [
-                  "untitled-page1",
-                  "untitled-page2"
+                  "untitled-page",
+                  "untitled-page"
                 ]
               },
               {
-                "group": "untitle group2",
+                "tab": "Untitled Tab",
                 "pages": [
-                  "untitled-page1-1",
-                  "untitled-page2-1"
+                  "untitled-page",
+                  "untitled-page"
                 ]
               }
             ]
