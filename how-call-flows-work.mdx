@@ -8,7 +8,7 @@ Call flows define how phone.systems™ receives, routes, processes, and delivers
 Use this page to understand the call flow model before you create objects, connect routing paths, or organize complex flows across multiple workspace pages.
 
 <Info>
-Call flows are the main routing model in phone.systems™. They determine what happens when a call enters the system and how the call moves between objects.
+  Call flows are the main routing model in phone.systems™. They determine what happens when a call enters the system and how the call moves between objects.
 </Info>
 
 ## Call flow model
@@ -34,11 +34,9 @@ In this flow:
   <Step title="The call enters the flow">
     The **Phone Number** object receives the inbound call.
   </Step>
-
   <Step title="The call is routed to a destination">
     The **Ring Group** object sends the call to one or more users, contact methods, or destinations.
   </Step>
-
   <Step title="The call follows the fallback path">
     If the call is not answered, the call continues to **Voicemail**.
   </Step>
@@ -59,13 +57,13 @@ Use the workspace to:
 - review how calls move through the flow
 
 <Frame caption="Call flow workspace with objects connected by cables">
-  <img src="/images/phone-systems/call-flows/workspace-overview.png" alt="Call flow workspace with objects connected by cables" />
+  ![Call flow workspace with objects connected by cables](/images/phone-systems/call-flows/workspace-overview.png)
 </Frame>
 
 The workspace should show the call path clearly. Place entry objects near the beginning of the flow and keep related routing branches close together so the flow is easier to read and maintain.
 
 <Tip>
-For large or complex call flows, use workspace pages to separate routing areas such as Main, Sales, Support, and After hours.
+  For large or complex call flows, use workspace pages to separate routing areas such as Main, Sales, Support, and After hours.
 </Tip>
 
 ## Objects
@@ -113,7 +111,7 @@ For example:
 - a **Voicemail** object requires delivery settings
 
 <Frame caption="Object configuration panel">
-  <img src="/images/phone-systems/call-flows/object-configuration-panel.png" alt="Object configuration panel in a phone.systems call flow" />
+  ![Object configuration panel in a phone.systems call flow](/images/phone-systems/call-flows/object-configuration-panel.png)
 </Frame>
 
 Object settings define what the object does when a call reaches it. After configuring an object, connect it to the next object so the call can continue through the flow.
@@ -152,7 +150,7 @@ Time Router
 ```
 
 <Tip>
-Keep cable paths easy to follow. Avoid placing related objects far apart or crossing many cables, especially in large call flows.
+  Keep cable paths easy to follow. Avoid placing related objects far apart or crossing many cables, especially in large call flows.
 </Tip>
 
 ## Entry objects
@@ -191,7 +189,7 @@ Routing objects decide where the call should go next. They are used when the cal
 Routing objects are useful when one call flow needs several possible outcomes.
 
 <Info>
-Routing objects are usually placed after an entry object. They decide which path the call should follow next.
+  Routing objects are usually placed after an entry object. They decide which path the call should follow next.
 </Info>
 
 ## Destination and delivery objects
@@ -250,7 +248,7 @@ Use clear page names, such as:
 - **Outbound**
 
 <Warning>
-Avoid using too many cross-page connections in one flow. If routing becomes hard to follow, split the logic into smaller call flows or simplify the page layout.
+  Avoid using too many cross-page connections in one flow. If routing becomes hard to follow, split the logic into smaller call flows or simplify the page layout.
 </Warning>
 
 ## Common call flow patterns
@@ -319,49 +317,20 @@ Use these examples to understand common ways objects can be combined.
 
 ## Design considerations
 
-A clear call flow is easier to troubleshoot and maintain. When building call flows, keep these practices in mind.
+A clear call flow is easier to review, test, and troubleshoot. Use descriptive object names, keep the main route visible, and place related objects near each other.
 
-### Use descriptive object names
+Use workspace pages when one flow becomes difficult to read on a single page. For example, a larger call flow can be split into pages such as **Main**, **Sales**, **Support**, and **After hours**.
 
-Use names that describe the object’s purpose. For example, use **Sales Ring Group** instead of only **Ring Group**.
+Use separate call flows when the routing logic belongs to a different team, location, customer group, or call handling scenario. Use workspace pages when the logic belongs to the same overall flow but needs better visual organization.
 
-### Keep the main route visible
-
-Place the most common call path in a clear left-to-right or top-to-bottom order. Move less common fallback paths, such as voicemail or after-hours routing, to nearby branches.
-
-### Group related objects
-
-Keep related objects close together. For example, place a Voice Menu near its Sales, Support, and Billing routes.
-
-### Avoid unnecessary complexity
-
-Do not add extra objects when a simpler flow would work. A smaller flow is easier to read, test, and troubleshoot.
-
-### Use pages for large flows
-
-If a flow becomes difficult to read, split it into workspace pages. Use page names that match the routing logic, such as **Main**, **Sales**, **Support**, or **After hours**.
-
-## When to use separate call flows
-
-Use separate call flows when different teams, departments, customers, or routing scenarios need independent configuration.
-
-Separate call flows may be useful for:
-
-- different business locations
-- separate departments
-- different customer groups
-- testing new routing logic
-- separating inbound and outbound routing logic
-- isolating complex call handling scenarios
-
-<Info>
-Use separate call flows when the routing logic is easier to understand as an independent flow. Use workspace pages when the logic belongs to the same overall flow but needs better visual organization.
-</Info>
+<Tip>
+  Use separate call flows for independent routing scenarios. Use workspace pages to organize large flows that still belong together.
+</Tip>
 
 ## Related links
 
 <CardGroup cols={2}>
-  <Card title="Use the call flow control panel" href="./control-panel">
+  <Card title="Use the call flow control panel" href="./use-call-flow-control-panel">
     Create, edit, delete, search, and manage call flows in the workspace.
   </Card>
 
@@ -377,4 +346,3 @@ Use separate call flows when the routing logic is easier to understand as an ind
     Review common routing patterns and workspace layouts.
   </Card>
 </CardGroup>
-```

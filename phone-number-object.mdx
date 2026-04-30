@@ -1,0 +1,255 @@
+---
+title: "Phone Number object"
+description: "Configure the Phone Number object to receive inbound calls on an assigned phone number and route them into a call flow."
+---
+
+The **Phone Number** object receives inbound calls on an assigned phone number and routes them into a call flow.
+
+Use this object when a DID number or external phone number should be connected to a phone.systems™ call flow.
+
+## How it works
+
+A Phone Number object is assigned to one phone number. When that number receives an inbound call, the call enters the call flow through the Phone Number object and continues to the next connected object.
+
+A phone number can be assigned to only one Phone Number object. If the number is already assigned to another Phone Number object, it cannot be selected again until it is removed from the existing object.
+
+Example call path:
+
+```text
+Phone Number -> Ring Group -> Voicemail
+```
+
+In this flow, the Phone Number object receives the inbound call, the Ring Group attempts to connect the call, and Voicemail handles the call if it is not answered.
+
+## Before you begin
+
+- A call flow is required.
+- A phone number must be available in phone.systems™.
+- The phone number must not already be assigned to another Phone Number object.
+- Any destination object that should receive the call must already exist or be ready to add to the workspace.
+
+## Add a Phone Number object
+
+<Steps>
+  <Step title="Open the call flow">
+    In the sidebar, open **Call Flows**, then select the call flow where you want to add the phone number.
+  </Step>
+
+  <Step title="Add the object">
+    Drag the **Phone Number** object from the **Object Menu** onto the workspace.
+  </Step>
+
+  <Step title="Place the object">
+    Release the object where the call should enter the flow.
+  </Step>
+
+  <Step title="Configure the object">
+    Select the phone number and complete the required settings.
+  </Step>
+
+  <Step title="Save the object">
+    Click **Save**.
+  </Step>
+</Steps>
+
+<Frame caption="Phone Number object in the call flow workspace">
+  <img
+    src="/images/phone-systems/call-flows/objects/phone-number-object.png"
+    alt="Phone Number object in the phone.systems call flow workspace"
+  />
+</Frame>
+
+## Settings
+
+| Setting | Description |
+| --- | --- |
+| Name | Name used to identify the Phone Number object on the workspace. Use a descriptive name when the call flow contains multiple numbers. |
+| Phone number | Phone number assigned to the object. The selected number receives inbound calls and sends them into the connected call flow path. |
+| CLI rules | Optional rules used to rewrite caller ID or caller name values before the call continues through the flow. |
+
+## Phone number format
+
+Phone numbers are shown in E.164 format.
+
+```text
+<CountryCode><AreaCode><LocalNumber>
+```
+
+Examples:
+
+```text
+14169233346
+442034116446
+```
+
+<Info>
+Use the number format shown in the phone.systems™ interface. Do not add spaces, brackets, or symbols unless the interface explicitly requires them.
+</Info>
+
+## Connect the object
+
+After configuring the Phone Number object, connect it to the next object in the call path.
+
+<Steps>
+  <Step title="Select the output socket">
+    Select the output socket on the Phone Number object.
+  </Step>
+
+  <Step title="Drag the cable">
+    Drag the cable to the input socket of the next object.
+  </Step>
+
+  <Step title="Connect the destination object">
+    Release the cable on the destination object.
+  </Step>
+</Steps>
+
+Common next objects include:
+
+<CardGroup cols={2}>
+  <Card title="Ring Group object" href="./ring-group">
+    Route inbound calls to one or more users, contact methods, or destinations.
+  </Card>
+
+  <Card title="Voice Menu object" href="./voice-menu">
+    Play an IVR prompt and route calls based on caller input.
+  </Card>
+
+  <Card title="Time Router object" href="./time-router">
+    Route calls based on business hours, holidays, or schedule conditions.
+  </Card>
+
+  <Card title="Caller Router object" href="./caller-router">
+    Route calls based on caller ID or CLI rules.
+  </Card>
+</CardGroup>
+
+## CLI rules
+
+CLI rules let you modify caller ID or caller name values before the call continues through the flow. Use CLI rules when you need to identify which number received the call or when downstream systems require a specific caller ID format.
+
+<Tip>
+Use CLI rules only when the modified caller ID or caller name is required. Unnecessary rewrites can make troubleshooting harder.
+</Tip>
+
+### Replace the caller name
+
+Use this rule when the original caller name should be replaced with a fixed value.
+
+| Field | Value |
+| --- | --- |
+| SRC Name Rewrite Rule | `^(.*)$` |
+| SRC Name Rewrite Result | `Custom text` |
+
+Result:
+
+```text
+Original caller name -> Custom text
+```
+
+### Add text before the original caller name
+
+Use this rule when you want to keep the original caller name and add a prefix.
+
+| Field | Value |
+| --- | --- |
+| SRC Name Rewrite Rule | `^(.*)$` |
+| SRC Name Rewrite Result | `Custom text \1` |
+
+Result:
+
+```text
+Original caller name -> Custom text Original caller name
+```
+
+<Frame caption="CLI rules for the Phone Number object">
+  <img
+    src="/images/phone-systems/call-flows/objects/phone-number-cli-rules.png"
+    alt="CLI rules in the Phone Number object configuration"
+  />
+</Frame>
+
+## Common call paths
+
+Use the Phone Number object as the first object in inbound call flows.
+
+<AccordionGroup>
+  <Accordion title="Direct call routing">
+    Route the inbound call directly to a ring group.
+
+    ```text
+    Phone Number -> Ring Group
+    ```
+  </Accordion>
+
+  <Accordion title="Business-hours routing">
+    Route the inbound call through a time schedule before sending it to a destination.
+
+    ```text
+    Phone Number -> Time Router
+                    ├── Business hours -> Ring Group
+                    └── Closed hours -> Voicemail
+    ```
+  </Accordion>
+
+  <Accordion title="IVR routing">
+    Route the inbound call to a voice menu so the caller can select a department.
+
+    ```text
+    Phone Number -> Voice Menu
+                    ├── Sales -> Ring Group
+                    └── Support -> Queue
+    ```
+  </Accordion>
+
+  <Accordion title="Caller-based routing">
+    Route the inbound call based on caller ID.
+
+    ```text
+    Phone Number -> Caller Router
+                    ├── VIP callers -> Priority Ring Group
+                    └── Other callers -> Main Ring Group
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The phone number is not available in the object">
+    Confirm that the number exists in phone.systems™ and is not already assigned to another Phone Number object.
+  </Accordion>
+
+  <Accordion title="Inbound calls do not enter the call flow">
+    Confirm that the Phone Number object is saved, connected to the next object, and assigned to the correct phone number.
+  </Accordion>
+
+  <Accordion title="Calls stop at the Phone Number object">
+    Check that the object has an outgoing cable connected to a valid destination object.
+  </Accordion>
+
+  <Accordion title="Caller ID or caller name looks incorrect">
+    Review CLI rules on the Phone Number object and any downstream objects that may also rewrite caller information.
+  </Accordion>
+</AccordionGroup>
+
+## Related links
+
+<CardGroup cols={2}>
+  <Card title="Add and configure objects" href="../add-and-configure-objects">
+    Add objects to the workspace and configure their settings.
+  </Card>
+
+  <Card title="Call flow object reference" href="../objects">
+    Review all call flow objects and their behavior.
+  </Card>
+
+  <Card title="Manage phone numbers" href="../../Numbers/phone-numbers">
+    Manage phone numbers available to phone.systems™.
+  </Card>
+
+  <Card title="How call flows work" href="../how-call-flows-work">
+    Understand how objects, cables, and routing paths work together.
+  </Card>
+</CardGroup>
+```

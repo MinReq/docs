@@ -1,4 +1,375 @@
 ---
-title: 'Internal object'
+
+title: "Internal Number object"
+
+description: "Configure the Internal Number object to receive internal calls through an extension number and route them into a call flow."
+
 ---
 
+The **Internal Number** object receives internal calls through an extension number and routes them into a call flow.
+
+Use this object when users need to dial an internal extension to reach a call flow, department, ring group, queue, voicemail, or another internal destination.
+
+## How it works
+
+An Internal Number object is assigned to one internal number. When a user dials that internal number, the call enters the call flow through the Internal Number object and continues to the next connected object.
+
+An internal number can be assigned to only one Internal Number object. If the internal number is already assigned to another object, it cannot be selected again until it is removed from the existing object.
+
+Example call path:
+
+```text
+
+Internal Number -> Ring Group -> Voicemail
+
+```
+
+In this flow, the Internal Number object receives the internal call, the Ring Group attempts to connect the call, and Voicemail handles the call if it is not answered.
+
+## Before you begin
+
+- A call flow is required.
+
+- An internal number must be available in phone.systems™.
+
+- The internal number must not already be assigned to another Internal Number object.
+
+- Any destination object that should receive the call must already exist or be ready to add to the workspace.
+
+## Add an Internal Number object
+
+<Steps>
+
+  <Step title="Open the call flow">
+
+    In the sidebar, open **Call Flows**, then select the call flow where you want to add the internal number.
+
+  </Step>
+
+  <Step title="Add the object">
+
+    Drag the **Internal Number** object from the **Object Menu** onto the workspace.
+
+  </Step>
+
+  <Step title="Place the object">
+
+    Release the object where the internal call should enter the flow.
+
+  </Step>
+
+  <Step title="Configure the object">
+
+    Select the internal number and complete the required settings.
+
+  </Step>
+
+  <Step title="Save the object">
+
+    Click **Save**.
+
+  </Step>
+
+</Steps>
+
+<Frame caption="Internal Number object in the call flow workspace">
+
+  <img
+
+    src="/images/phone-systems/call-flows/objects/internal-number-object.png"
+
+    alt="Internal Number object in the phone.systems call flow workspace"
+
+  />
+
+</Frame>
+
+## Settings
+
+<AccordionGroup>
+
+  <Accordion title="Name">
+
+    Name used to identify the Internal Number object on the workspace. Use a descriptive name when the call flow contains multiple internal numbers.
+
+  </Accordion>
+
+  <Accordion title="Internal number">
+
+    Internal extension number assigned to the object. When users dial this number, the call enters the connected call flow path.
+
+  </Accordion>
+
+  <Accordion title="CLI rules">
+
+    Optional rules used to rewrite caller ID or caller name values before the call continues through the flow.
+
+  </Accordion>
+
+</AccordionGroup>
+
+Internal numbers are extension numbers used inside phone.systems™.
+
+Examples:
+
+```text
+
+100
+
+101
+
+2001
+
+```
+
+<Info>
+
+Use the internal number format configured in the **Numbers** section. Avoid using internal numbers that conflict with feature codes or other internal dialing patterns.
+
+</Info>
+
+## Connect the object
+
+After configuring the Internal Number object, connect it to the next object in the call path.
+
+<Steps>
+
+  <Step title="Select the output socket">
+
+    Select the output socket on the Internal Number object.
+
+  </Step>
+
+  <Step title="Drag the cable">
+
+    Drag the cable to the input socket of the next object.
+
+  </Step>
+
+  <Step title="Connect the destination object">
+
+    Release the cable on the destination object.
+
+  </Step>
+
+</Steps>
+
+Common next objects include:
+
+<CardGroup cols={2}>
+
+  <Card title="Ring Group object" href="./ring-group">
+
+    Route internal calls to one or more users, contact methods, or destinations.
+
+  </Card>
+
+  <Card title="Voice Menu object" href="./voice-menu">
+
+    Play an IVR prompt and route calls based on dial pad input.
+
+  </Card>
+
+  <Card title="Queue object" href="./queue">
+
+    Place internal callers in a queue before routing them to available members.
+
+  </Card>
+
+  <Card title="Voicemail object" href="./voicemail">
+
+    Send unanswered internal calls to voicemail.
+
+  </Card>
+
+</CardGroup>
+
+## CLI rules
+
+CLI rules let you modify caller ID or caller name values before the call continues through the flow. Use CLI rules when you need to identify that a call entered through a specific internal number or when downstream objects require a specific caller ID format.
+
+<Tip>
+
+Use CLI rules only when the modified caller ID or caller name is required. Unnecessary rewrites can make troubleshooting harder.
+
+</Tip>
+
+### Replace the caller name
+
+Use this rule when the original caller name should be replaced with a fixed value.
+
+<ParamField body="SRC Name Rewrite Rule" type="string">
+
+  `^(.*)$`
+
+</ParamField>
+
+<ParamField body="SRC Name Rewrite Result" type="string">
+
+  `Custom text`
+
+</ParamField>
+
+Result:
+
+```text
+
+Original caller name -> Custom text
+
+Result:
+
+```text
+
+Original caller name -> Custom text
+
+```
+
+### Add text before the original caller name
+
+Use this rule when you want to keep the original caller name and add a prefix.
+
+```text
+
+SRC Name Rewrite Rule: ^(.*)$
+
+SRC Name Rewrite Result: Custom text \1
+
+Result:
+
+```text
+
+Original caller name -> Custom text Original caller name
+
+```
+
+<Frame caption="CLI rules for the Internal Number object">
+
+  <img
+
+    src="/images/phone-systems/call-flows/objects/internal-number-cli-rules.png"
+
+    alt="CLI rules in the Internal Number object configuration"
+
+  />
+
+</Frame>
+
+## Common call paths
+
+Use the Internal Number object as an entry point for internal dialing.
+
+<AccordionGroup>
+
+  <Accordion title="Direct internal routing">
+
+    Route an internal extension directly to a ring group.
+
+    ```text
+
+    Internal Number -> Ring Group
+
+    ```
+
+  </Accordion>
+
+  <Accordion title="Internal department menu">
+
+    Route an internal extension to a voice menu so users can choose a department or function.
+
+    ```text
+
+    Internal Number -> Voice Menu
+
+                       ├── Sales -> Ring Group
+
+                       └── Support -> Queue
+
+    ```
+
+  </Accordion>
+
+  <Accordion title="Internal queue access">
+
+    Route an internal extension directly to a queue.
+
+    ```text
+
+    Internal Number -> Queue
+
+    ```
+
+  </Accordion>
+
+  <Accordion title="Internal voicemail access">
+
+    Route an internal extension to voicemail.
+
+    ```text
+
+    Internal Number -> Voicemail
+
+    ```
+
+  </Accordion>
+
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+
+  <Accordion title="The internal number is not available in the object">
+
+    Confirm that the internal number exists in phone.systems™ and is not already assigned to another Internal Number object.
+
+  </Accordion>
+
+  <Accordion title="Internal calls do not enter the call flow">
+
+    Confirm that the Internal Number object is saved, connected to the next object, and assigned to the correct internal number.
+
+  </Accordion>
+
+  <Accordion title="Calls stop at the Internal Number object">
+
+    Check that the object has an outgoing cable connected to a valid destination object.
+
+  </Accordion>
+
+  <Accordion title="Caller ID or caller name looks incorrect">
+
+    Review CLI rules on the Internal Number object and any downstream objects that may also rewrite caller information.
+
+  </Accordion>
+
+</AccordionGroup>
+
+## Related links
+
+<CardGroup cols={2}>
+
+  <Card title="Add and configure objects" href="../add-and-configure-objects">
+
+    Add objects to the workspace and configure their settings.
+
+  </Card>
+
+  <Card title="Call flow object reference" href="../objects">
+
+    Review all call flow objects and their behavior.
+
+  </Card>
+
+  <Card title="Manage internal numbers" href="../../Numbers/internal-numbers">
+
+    Manage internal numbers available to phone.systems™.
+
+  </Card>
+
+  <Card title="How call flows work" href="../how-call-flows-work">
+
+    Understand how objects, cables, and routing paths work together.
+
+  </Card>
+
+</CardGroup>

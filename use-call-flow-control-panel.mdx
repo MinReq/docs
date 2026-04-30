@@ -1,4 +1,308 @@
 ---
-title: 'Use the call flow control panel'
+title: "Use the call flow control panel"
+description: "Create, edit, search, and manage call flows in the phone.systems™ control panel."
 ---
 
+Use the call flow control panel to create call flows, manage the workspace, add objects, connect objects, search resources, and update call flow users.
+
+## Before you begin
+
+- Access to phone.systems™ is required.
+- At least one user is required if the call flow should be assigned to specific users.
+- Create required resources before selecting them in call flow objects, such as phone numbers, contact methods, audio files, delivery methods, or schedules.
+
+## Create a call flow
+
+<Steps>
+  <Step title="Open Call Flows">
+    In the sidebar, open **Call Flows**.
+  </Step>
+
+  <Step title="Create a new call flow">
+    Click the create button in the lower-right corner of the screen.
+  </Step>
+
+  <Step title="Enter call flow details">
+    Enter a call flow name and add users who should have access to the call flow.
+  </Step>
+
+  <Step title="Save the call flow">
+    Click **Save**.
+  </Step>
+</Steps>
+
+<Frame caption="Create call flow screen">
+  <img
+    src="/images/phone-systems/call-flows/create-call-flow.png"
+    alt="Create call flow screen in phone.systems"
+  />
+</Frame>
+
+## Switch between call flows
+
+<Steps>
+  <Step title="Open the call flow selector">
+    Click the call flow name at the top of the interface.
+  </Step>
+
+  <Step title="Select a call flow">
+    Select the call flow you want to open.
+  </Step>
+</Steps>
+
+<Frame caption="Call flow selector">
+  <img
+    src="/images/phone-systems/call-flows/switch-call-flows.png"
+    alt="Call flow selector in phone.systems"
+  />
+</Frame>
+
+## Edit a call flow
+
+Use this task to update the call flow name or change assigned users.
+
+<Steps>
+  <Step title="Open Call Flows">
+    In the sidebar, open **Call Flows**.
+  </Step>
+
+  <Step title="Open the call flow actions menu">
+    Locate the call flow and open its actions menu.
+  </Step>
+
+  <Step title="Select Edit">
+    Select **Edit**.
+  </Step>
+
+  <Step title="Update the call flow">
+    Change the call flow name or assigned users.
+  </Step>
+
+  <Step title="Save the changes">
+    Click **Save**.
+  </Step>
+</Steps>
+
+## Delete a call flow
+
+<Warning>
+Deleted call flows cannot be restored. All associated configuration data and settings are removed.
+</Warning>
+
+<Steps>
+  <Step title="Open Call Flows">
+    In the sidebar, open **Call Flows**.
+  </Step>
+
+  <Step title="Open the call flow actions menu">
+    Locate the call flow and open its actions menu.
+  </Step>
+
+  <Step title="Select Delete">
+    Select **Delete**.
+  </Step>
+
+  <Step title="Confirm deletion">
+    Confirm that you want to delete the call flow.
+  </Step>
+</Steps>
+
+## Manage users for a call flow
+
+Users assigned to a call flow can access and work with that call flow.
+
+<Steps>
+  <Step title="Open the call flow actions menu">
+    Locate the call flow and open its actions menu.
+  </Step>
+
+  <Step title="Select Edit">
+    Select **Edit**.
+  </Step>
+
+  <Step title="Update users">
+    Add or remove users from the call flow.
+  </Step>
+
+  <Step title="Save the changes">
+    Click **Save**.
+  </Step>
+</Steps>
+
+## Add an object to the workspace
+
+Objects define what happens to a call. Add objects to the workspace, configure them, and connect them with cables.
+
+<Steps>
+  <Step title="Open the call flow workspace">
+    Open the call flow where you want to add the object.
+  </Step>
+
+  <Step title="Drag an object from the Object Menu">
+    Drag the object from the **Object Menu** onto the workspace.
+  </Step>
+
+  <Step title="Place the object">
+    Release the object where it should appear in the workspace.
+  </Step>
+
+  <Step title="Configure the object">
+    Complete the required fields in the object configuration panel.
+  </Step>
+
+  <Step title="Save the object">
+    Click **Save**.
+  </Step>
+</Steps>
+
+<Frame caption="Add an object to the workspace">
+  <img
+    src="/images/phone-systems/call-flows/add-object-to-workspace.png"
+    alt="Adding an object to the call flow workspace"
+  />
+</Frame>
+
+## Move objects on the workspace
+
+<Steps>
+  <Step title="Select the object">
+    Click the object you want to move.
+  </Step>
+
+  <Step title="Move the object">
+    Drag the object to the required position.
+  </Step>
+
+  <Step title="Release the object">
+    Release the object in the new position.
+  </Step>
+</Steps>
+
+## Duplicate an object
+
+Use object duplication when you need to copy the configuration of an existing object.
+
+<Tabs>
+  <Tab title="macOS">
+    Hold **Option** and drag the object.
+  </Tab>
+
+  <Tab title="Windows">
+    Hold **Ctrl** and drag the object.
+  </Tab>
+</Tabs>
+
+<Important>
+Not all objects can be duplicated. Objects assigned to unique numbers, such as **Phone Number** and **Internal Number** objects, may not be copied.
+</Important>
+
+## Select and move multiple objects
+
+Use multi-select when you need to move several objects at the same time.
+
+<Tabs>
+  <Tab title="macOS">
+    - Hold **Command** to select individual objects.
+    - Hold **Shift** to select a complete object tree.
+  </Tab>
+
+  <Tab title="Windows">
+    - Hold **Ctrl** to select individual objects.
+    - Hold **Shift** to select a complete object tree.
+  </Tab>
+</Tabs>
+
+## Connect objects with cables
+
+Cables define how a call moves from one object to another.
+
+<Steps>
+  <Step title="Select the source output">
+    Select the output socket of the source object.
+  </Step>
+
+  <Step title="Drag the cable">
+    Drag the cable to the input socket of the destination object.
+  </Step>
+
+  <Step title="Connect the objects">
+    Release the cable to connect the objects.
+  </Step>
+</Steps>
+
+<Tip>
+Keep cable paths easy to follow. If the workspace becomes difficult to read, organize the call flow with tabs and pages.
+</Tip>
+
+## Search call flow resources
+
+Use search to locate objects and related resources in large call flows.
+
+<Steps>
+  <Step title="Open search">
+    Click the search icon in the workspace tab menu.
+  </Step>
+
+  <Step title="Enter a search term">
+    Enter the resource name or part of the name.
+  </Step>
+
+  <Step title="Run the search">
+    Click **Search**.
+  </Step>
+
+  <Step title="Review the results">
+    Review results grouped by resource type.
+  </Step>
+
+  <Step title="Open a result">
+    Use the result actions to locate the object on the workspace or open the resource settings.
+  </Step>
+</Steps>
+
+<Frame caption="Search call flow resources">
+  <img
+    src="/images/phone-systems/call-flows/search-resources.png"
+    alt="Search results in the call flow workspace"
+  />
+</Frame>
+
+## Delete objects with the trash bin
+
+<Warning>
+Deleting an object can affect the call path. Review connected objects and fallback routes before deleting objects from an active call flow.
+</Warning>
+
+<Steps>
+  <Step title="Select objects">
+    Select one or more objects.
+  </Step>
+
+  <Step title="Move objects to the trash bin">
+    Drag the selected object or object tree to the trash bin.
+  </Step>
+
+  <Step title="Confirm the change">
+    Confirm the deletion if prompted.
+  </Step>
+</Steps>
+
+## Related links
+
+<CardGroup cols={2}>
+  <Card title="How call flows work" href="./how-call-flows-work">
+    Understand workspaces, objects, cables, tabs, and routing logic.
+  </Card>
+
+  <Card title="Add and configure objects" href="./add-and-configure-objects">
+    Add objects to the workspace and configure object settings.
+  </Card>
+
+  <Card title="Call flow object reference" href="./objects">
+    Review available call flow objects, fields, and behavior.
+  </Card>
+
+  <Card title="Organize call flows with tabs and pages" href="./tabs-and-multiple-pages">
+    Split complex call flows across multiple workspace pages.
+  </Card>
+</CardGroup>

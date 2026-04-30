@@ -53,6 +53,7 @@
               {
                 "group": "Call flow objects",
                 "pages": [
+                  "phone-number-object",
                   "internal-object",
                   "ring-group-object"
                 ]

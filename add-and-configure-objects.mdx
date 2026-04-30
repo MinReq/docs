@@ -1,4 +1,266 @@
 ---
-title: 'Add and configure objects'
+title: "Add and configure objects"
 ---
 
+Objects define what happens when a call reaches a specific point in a call flow. Use objects to receive calls, route calls, play audio, send calls to users or destinations, record calls, collect voicemail, receive faxes, send notifications, or forward calls to another flow.
+
+Use this guide to add objects to a call flow, configure their settings, and connect them to the rest of the call path.
+
+## Before you begin
+
+- A call flow is required.
+- Access to the call flow workspace is required.
+- Required resources should be created before you select them in an object. These resources may include users, contact methods, phone numbers, internal numbers, audio files, time schedules, or delivery methods.
+
+<Info>
+  The available settings depend on the object type. For object-specific fields and behavior, see the call flow object reference.
+</Info>
+
+## Add an object to the workspace
+
+<Steps>
+  <Step title="Open the call flow">
+    In the sidebar, open **Call Flows**, then select the call flow where you want to add the object.
+  </Step>
+  <Step title="Select an object">
+    In the **Object Menu**, find the object you want to add.
+  </Step>
+  <Step title="Drag the object to the workspace">
+    Drag the object from the **Object Menu** onto the workspace.
+  </Step>
+  <Step title="Place the object">
+    Release the object where it should appear in the call flow.
+  </Step>
+</Steps>
+
+<Frame caption="Add an object to the call flow workspace">
+  ![Adding an object to the call flow workspace](/images/phone-systems/call-flows/add-object-to-workspace.png)
+</Frame>
+
+## Configure the object
+
+After you add an object, the configuration panel opens automatically. Use this panel to define the object name, destinations, routing rules, media, schedules, delivery settings, or other object-specific fields.
+
+<Steps>
+  <Step title="Enter the object name">
+    Enter a clear name that describes the object’s role in the call flow.
+  </Step>
+  <Step title="Complete required fields">
+    Fill in the fields required for the selected object type.
+  </Step>
+  <Step title="Configure optional settings">
+    Add optional routing, media, CLI, timeout, or delivery settings when they are needed.
+  </Step>
+  <Step title="Save the object">
+    Click **Save**.
+  </Step>
+</Steps>
+
+<Frame caption="Object configuration panel">
+  ![Object configuration panel in phone.systems](/images/phone-systems/call-flows/object-configuration-panel.png)
+</Frame>
+
+<Tip>
+  Use descriptive object names such as **Sales Ring Group**, **After-hours Voicemail**, or **Support Queue**. Clear names make large call flows easier to read and troubleshoot.
+</Tip>
+
+## Choose the right object
+
+Use the object that matches the call handling action you need.
+
+<CardGroup cols={2}>
+  <Card title="Receive calls" href="./objects/phone-number">
+    Use **Phone Number** and **Internal Number** objects to receive external or internal calls.
+  </Card>
+
+  <Card title="Route calls" href="./objects/ring-group">
+    Use **Ring Group**, **Voice Menu**, **Queue**, **Time Router**, **Caller Router**, **Blocklist**, or **Forwarding** objects to control where calls go next.
+  </Card>
+
+  <Card title="Play media" href="./objects/audio-playback">
+    Use **Audio Playback** to play announcements, prompts, or music-on-hold.
+  </Card>
+
+  <Card title="Deliver messages and files" href="./objects/voicemail">
+    Use **Voicemail**, **Fax**, **Call Recorder**, or **Notification** objects to store or deliver generated files and alerts.
+  </Card>
+</CardGroup>
+
+## Common object settings
+
+Most objects include a set of common fields or behaviors. The exact fields depend on the object type.
+
+| Setting | Description |
+| --- | --- |
+| Name | Identifies the object in the workspace. |
+| Destination | Defines where calls, messages, files, or notifications are sent. |
+| Timeout | Defines how long the object waits before moving to the next route or fallback path. |
+| Media | Defines audio files, prompts, announcements, or music used by the object. |
+| CLI rules | Defines caller ID or caller name rewrite behavior, when supported. |
+| Delivery method | Defines where generated files or messages are delivered, when supported. |
+
+<Info>
+  Not every object uses every setting. Review the object-specific reference page for the exact fields and behavior.
+</Info>
+
+## Connect the object to the call path
+
+After configuring an object, connect it to other objects with cables. Cables define how the call moves through the flow.
+
+<Steps>
+  <Step title="Select the source output">
+    Select the output socket of the object where the call should start from.
+  </Step>
+  <Step title="Drag the cable">
+    Drag the cable toward the destination object.
+  </Step>
+  <Step title="Select the destination input">
+    Release the cable on the input socket of the destination object.
+  </Step>
+</Steps>
+
+<Frame caption="Connect objects with cables">
+  ![Objects connected with cables in a phone.systems call flow](/images/phone-systems/call-flows/connect-objects-with-cables.png)
+</Frame>
+
+<Tip>
+  Keep cable paths easy to follow. If the workspace becomes difficult to read, split the flow into workspace pages.
+</Tip>
+
+## Configure objects with multiple routes
+
+Some objects can send calls to different paths depending on caller input, time schedules, caller ID, or call result.
+
+| Object | Route type |
+| --- | --- |
+| Voice Menu | Routes calls based on dial pad input. |
+| Time Router | Routes calls based on schedules or time conditions. |
+| Caller Router | Routes calls based on caller ID. |
+| Queue | Routes calls based on queue handling and fallback behavior. |
+| Ring Group | Routes calls based on answer, timeout, or fallback behavior. |
+
+Example voice menu route:
+
+```text
+Voice Menu
+├── Press 1 -> Sales Ring Group
+├── Press 2 -> Support Queue
+└── No input -> Voicemail
+```
+
+When an object has multiple outputs, connect each output to the correct next object.
+
+## Update an object
+
+Use this task when you need to change an existing object’s settings.
+
+<Steps>
+  <Step title="Open the call flow">
+    Open the call flow that contains the object.
+  </Step>
+  <Step title="Open the object">
+    Click the object in the workspace.
+  </Step>
+  <Step title="Update settings">
+    Change the required fields in the configuration panel.
+  </Step>
+  <Step title="Save the changes">
+    Click **Save**.
+  </Step>
+</Steps>
+
+<Warning>
+  Changing object settings can affect active call routing. Review connected routes before updating objects in a production call flow.
+</Warning>
+
+## Move an object
+
+Use this task to improve the layout of the workspace without changing the object configuration.
+
+<Steps>
+  <Step title="Select the object">
+    Click the object you want to move.
+  </Step>
+  <Step title="Drag the object">
+    Move the object to the required position.
+  </Step>
+  <Step title="Release the object">
+    Release the object in the new location.
+  </Step>
+</Steps>
+
+## Duplicate an object
+
+Use duplication when you need to reuse an object configuration.
+
+<Tabs>
+  <Tab title="macOS">
+    Hold **Option** and drag the object.
+
+    <Danger>
+      Not all objects can be duplicated. Objects assigned to unique resources, such as **Phone Number** and **Internal Number** objects, may not be copied.
+    </Danger>
+  </Tab>
+  <Tab title="Windows">
+    Hold **Ctrl** and drag the object.
+
+    <Danger>
+      Not all objects can be duplicated. Objects assigned to unique resources, such as **Phone Number** and **Internal Number** objects, may not be copied.
+    </Danger>
+
+  </Tab>
+</Tabs>
+
+
+## Delete an object
+
+Use this task when an object is no longer needed in the call flow.
+
+<Warning>
+  Deleting an object can break the call path if connected objects depend on it. Review connected cables and fallback routes before deleting an object.
+</Warning>
+
+<Steps>
+  <Step title="Select the object">
+    Click the object you want to remove.
+  </Step>
+  <Step title="Move the object to the trash bin">
+    Drag the object to the trash bin.
+  </Step>
+  <Step title="Confirm the deletion">
+    Confirm the deletion if prompted.
+  </Step>
+</Steps>
+
+## Review the object configuration
+
+Before saving changes to a production call flow, review the object configuration and connected routes.
+
+Check that required fields are completed, object names are clear, fallback routes are configured where needed, and each object is connected to the correct next object.
+
+<Info>
+  For object-specific settings, review the relevant object page in the call flow object reference.
+</Info>
+
+## Related links
+
+<CardGroup cols={2}>
+  <Card title="How call flows work" href="./how-call-flows-work">
+    Understand workspaces, objects, cables, tabs, and routing logic.
+  </Card>
+
+  <Card title="Use the call flow control panel" href="./control-panel">
+    Create, edit, search, and manage call flows in the workspace.
+  </Card>
+
+  <Card title="Call flow object reference" href="./objects">
+    Review available objects, fields, and routing behavior.
+  </Card>
+
+  <Card title="Organize call flows with tabs and pages" href="./tabs-and-multiple-pages">
+    Split complex call flows across workspace pages.
+  </Card>
+</CardGroup>
+
+```text
+```
