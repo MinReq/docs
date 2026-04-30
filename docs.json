@@ -34,18 +34,30 @@
       },
       {
         "tab": "phone.systems™",
-        "menu": [
+        "pages": [
+          "untitled-page",
           {
-            "item": "Untitled Item",
+            "group": "Getting Started",
             "pages": [
-              "untitled-page",
-              "untitled-page2"
+              "set-up-phone-systems",
+              "configure-phone-systems-app",
+              "configure-third-party-softphone"
             ]
           },
           {
-            "item": "Untitled Item2",
+            "group": "Call flows",
             "pages": [
-              "untitled-page34"
+              "how-call-flows-work",
+              "use-call-flow-control-panel",
+              "add-and-configure-objects",
+              {
+                "group": "Call flow objects",
+                "pages": [
+                  "untitled-page",
+                  "internal-object",
+                  "ring-group-object"
+                ]
+              }
             ]
           }
         ]
