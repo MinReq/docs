@@ -9,45 +9,23 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "products": [
+    "tabs": [
       {
-        "product": "DIDWW",
-        "color": {
-          "light": "#023f7f",
-          "dark": "#023f7f"
-        },
-        "tabs": [
+        "tab": "Guides",
+        "groups": [
           {
-            "tab": "Guides",
-            "groups": [
-              {
-                "group": "Voice",
-                "pages": [
-                  {
-                    "group": "Inbound Trunks",
-                    "pages": [
-                      "how-inbound-trunk-work",
-                      "create-and-manage-sip-trunks",
-                      "sip-trunk-settings",
-                      "create-and-manage-pstn-trunks",
-                      "create-and-manager-trunk-groups",
-                      "assign-a-voice-trunk",
-                      "inbound-number-lists"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "tab": "API reference",
-            "openapi": "DIDWWAPI32026-04-16(Latest).openapi.yaml",
+            "group": "Voice",
             "pages": [
               {
-                "group": "API documentation",
-                "openapi": "DIDWWAPI32026-04-16(Latest).openapi.yaml",
+                "group": "Inbound Trunks",
                 "pages": [
-                  "get-countries"
+                  "how-inbound-trunk-work",
+                  "create-and-manage-sip-trunks",
+                  "sip-trunk-settings",
+                  "create-and-manage-pstn-trunks",
+                  "create-and-manager-trunk-groups",
+                  "assign-a-voice-trunk",
+                  "inbound-number-lists"
                 ]
               }
             ]
@@ -55,10 +33,28 @@
         ]
       },
       {
-        "product": "phone.systems™",
-        "dropdowns": [
+        "tab": "phone.systems™",
+        "menu": [
           {
-            "dropdown": "Untitled Dropdown"
+            "item": "Untitled Item",
+            "dropdowns": [
+              {
+                "dropdown": "Untitled Dropdown",
+                "pages": [
+                  "untitled-page"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API reference",
+        "openapi": "DIDWWAPI32026-04-16(Latest).openapi.yaml",
+        "pages": [
+          {
+            "group": "API documentation",
+            "openapi": "DIDWWAPI32026-04-16(Latest).openapi.yaml"
           }
         ]
       }
