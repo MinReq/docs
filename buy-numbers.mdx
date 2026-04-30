@@ -1,0 +1,430 @@
+---
+title: "Buy Numbers"
+description: "Purchase DID numbers through the DIDWW User Panel by finding available numbers, applying filters, reviewing options, and completing your order."
+---
+
+Use **Buy Numbers** to search, filter, and purchase available DID numbers in the DIDWW User Panel. You can filter numbers by country, number type, area name, prefix, supported features, registration requirements, and billing options before completing an order.
+
+## Before you begin
+
+- A DIDWW account is required.
+- Your account must have enough prepaid balance to cover the selected services.
+- Some numbers may require end-user registration before activation.
+- Review pricing, billing period, channel options, and service restrictions before completing the order.
+
+<Note>
+If you have not added a credit card, you will be prompted to add one during checkout. You can also choose an instant payment method to complete the purchase.
+</Note>
+
+## Select country
+
+<Steps>
+  <Step title="Open Buy Numbers">
+    Go to **Phone Numbers > Buy Numbers**.
+  </Step>
+
+  <Step title="Choose a country">
+    In the **Country** dropdown, select the country where you want to purchase phone numbers.
+  </Step>
+</Steps>
+
+<Frame caption="Buy Phone Numbers country selection">
+  <img
+    src="/images/phone-numbers/buy-numbers/country-selection.png"
+    alt="Country dropdown on the Buy Numbers page"
+  />
+</Frame>
+
+## Select number type
+
+Choose the number type to filter the results and show only numbers available in that category.
+
+<Info>
+Each number type shows the total number of available prefixes in the selected country and number type. Unavailable number types appear grayed out with **0** prefixes.
+</Info>
+
+<AccordionGroup>
+  <Accordion title="Local">
+    Geographic numbers tied to specific cities or regions.
+  </Accordion>
+
+  <Accordion title="National">
+    Non-geographic numbers that provide a countrywide presence and are not linked to a specific locality.
+  </Accordion>
+
+  <Accordion title="Mobile">
+    Numbers assigned to mobile networks.
+  </Accordion>
+
+  <Accordion title="Toll-free">
+    Numbers that let callers connect without charge.
+  </Accordion>
+
+  <Accordion title="Shared Cost">
+    Numbers where the cost of the call is shared between the caller and the recipient.
+  </Accordion>
+
+  <Accordion title="Global / UIFN">
+    Universal International Freephone Numbers that allow callers from multiple countries to reach your business using a single number.
+  </Accordion>
+</AccordionGroup>
+
+<Frame caption="Number type filter">
+  <img
+    src="/images/phone-numbers/buy-numbers/number-type-filter.png"
+    alt="Number type filter on the Buy Numbers page"
+  />
+</Frame>
+
+## Apply filters
+
+After selecting the number type, refine the search results by area, prefix, registration requirement, supported features, or billing option.
+
+### Geographical filters
+
+Use geographical filters to narrow the result list by location or numbering plan.
+
+<ParamField body="State / Region" type="filter">
+  Narrows the selection by state or administrative region within the selected country. This option is available only in countries with sub-national divisions, such as the United States, Canada, and the United Kingdom.
+</ParamField>
+
+<ParamField body="NPA/NXX" type="filter">
+  Narrows the selection by area code or number prefix. This filter is primarily applicable in countries with structured numbering plans, such as the United States and Canada.
+</ParamField>
+
+### Registration filters
+
+Use registration filters to show numbers based on whether end-user registration is required.
+
+<ParamField body="Required" type="filter">
+  Shows numbers where end-user information is required for number activation.
+</ParamField>
+
+<ParamField body="Not required" type="filter">
+  Shows numbers that do not require registration before acquisition.
+</ParamField>
+
+### Supported feature filters
+
+Use supported feature filters to show numbers that support specific services.
+
+<ParamField body="Inbound calls" type="feature">
+  SIP, PSTN, and phone.systems™ call forwarding are supported.
+</ParamField>
+
+<ParamField body="Local CLI" type="feature">
+  The number can be used as caller ID with DIDWW local routes.
+</ParamField>
+
+<ParamField body="Inbound Fax" type="feature">
+  T.38 or G.711u passthrough is supported.
+</ParamField>
+
+<ParamField body="Inbound SMS" type="feature">
+  SMPP, HTTP, and email SMS delivery are supported.
+</ParamField>
+
+<ParamField body="Outbound A2P SMS" type="feature">
+  The number can be used as a long-code number for DIDWW A2P campaigns through SMPP and HTTP.
+</ParamField>
+
+<ParamField body="Outbound P2P SMS" type="feature">
+  SMPP and HTTP SMS delivery are supported.
+</ParamField>
+
+<ParamField body="Emergency calling" type="feature">
+  The number can be used to call local emergency service numbers.
+</ParamField>
+
+<ParamField body="Outbound CNAM" type="feature">
+  Configurable caller name is supported.
+</ParamField>
+
+<Note>
+When multiple supported feature filters are selected, only numbers that support all selected services are shown.
+</Note>
+
+### Billing filters
+
+Use billing filters to show numbers by pricing model.
+
+<ParamField body="Flat Rate" type="billing option">
+  Shows numbers with a flat-rate pricing model. These numbers include **2 dedicated channels** by default. The dedicated channels cannot be shared with other DIDs. The number of channels can be increased after purchase, and a recurring charge applies.
+</ParamField>
+
+<ParamField body="Metered" type="billing option">
+  Shows numbers with the Pay-Per-Minute option. These numbers are assigned to a capacity group with **100 channels** by default. The number of channels can be adjusted after purchase. Dedicated flat-rate channels are not included.
+</ParamField>
+
+### Search by area name or prefix
+
+Use direct text search when you know the area name or number prefix.
+
+Enter an area name to find numbers for that location, or enter a number prefix to match available DIDs.
+
+<Frame caption="Additional filters on the Buy Numbers page">
+  <img
+    src="/images/phone-numbers/buy-numbers/additional-filters.png"
+    alt="Additional filters on the Buy Numbers page"
+  />
+</Frame>
+
+## Add numbers to the shopping cart
+
+<Steps>
+  <Step title="Review available options">
+    Review the available number options and their pricing.
+  </Step>
+
+  <Step title="Select included channels">
+    Select the number of **Channels Included**.
+  </Step>
+
+  <Step title="Set quantity">
+    Enter the quantity of numbers you want to purchase.
+  </Step>
+
+  <Step title="Add the numbers to the cart">
+    Click the **Cart** button to add the selected numbers to the shopping cart.
+  </Step>
+</Steps>
+
+<Frame caption="Add numbers to the shopping cart">
+  <img
+    src="/images/phone-numbers/buy-numbers/add-to-cart.png"
+    alt="Add numbers to shopping cart button on the Buy Numbers page"
+  />
+</Frame>
+
+## Review the shopping cart
+
+Open the shopping cart to review your selected numbers.
+
+You can still adjust **Channels Included** or **Quantity** before proceeding.
+
+<Frame caption="Shopping cart review">
+  <img
+    src="/images/phone-numbers/buy-numbers/review-shopping-cart.png"
+    alt="Shopping cart with selected numbers"
+  />
+</Frame>
+
+## Select billing period and proceed to checkout
+
+<Steps>
+  <Step title="Select billing period">
+    In the shopping cart, select your preferred billing period.
+  </Step>
+
+  <Step title="Proceed to checkout">
+    Click **Proceed to Checkout**.
+  </Step>
+</Steps>
+
+<Frame caption="Select billing period and proceed to checkout">
+  <img
+    src="/images/phone-numbers/buy-numbers/select-billing-period.png"
+    alt="Billing period selection in the shopping cart"
+  />
+</Frame>
+
+## Review order summary
+
+<Steps>
+  <Step title="Review the order">
+    On the **Order Summary** page, review the selected numbers, billing period, pricing, and service details.
+  </Step>
+
+  <Step title="Continue the order">
+    Click **Continue** to proceed.
+  </Step>
+</Steps>
+
+<Note>
+To make changes before finalizing the order, click **Modify Order**. This returns you to the shopping cart.
+</Note>
+
+<Frame caption="Modify Order button on the Order Summary page">
+  <img
+    src="/images/phone-numbers/buy-numbers/modify-order.png"
+    alt="Modify Order button on the Order Summary page"
+  />
+</Frame>
+
+## Acknowledge service restrictions
+
+If any selected numbers have service restrictions, a **Service Restrictions** pop-up appears before the order is completed.
+
+<Steps>
+  <Step title="Review restrictions">
+    Read the service restrictions for the selected numbers.
+  </Step>
+
+  <Step title="Confirm acknowledgment">
+    Select the confirmation checkbox.
+  </Step>
+
+  <Step title="Complete the order">
+    Click **Agree & Complete Order**.
+  </Step>
+</Steps>
+
+<Warning>
+Complete the order only after reviewing the service restrictions, registration requirements, and pricing for the selected numbers.
+</Warning>
+
+<Frame caption="Service Restrictions pop-up">
+  <img
+    src="/images/phone-numbers/buy-numbers/service-restrictions.png"
+    alt="Service Restrictions pop-up before completing an order"
+  />
+</Frame>
+
+## Use the Number Selection Tool
+
+The **Number Selection Tool** lets you search for easy-to-remember Golden and Vanity Phone Numbers. Use this tool when you need memorable numbers or vanity numbers that match a brand, campaign, or customer-facing use case.
+
+<Important>
+The Number Selection Tool is not enabled by default. To enable it, contact **sales@didww.com**. Availability may vary by country and city.
+</Important>
+
+### Select country
+
+<Steps>
+  <Step title="Open Buy Numbers">
+    Go to **Phone Numbers > Buy Numbers**.
+  </Step>
+
+  <Step title="Choose a country">
+    In the **Country** dropdown, select the country where you want to purchase phone numbers.
+  </Step>
+</Steps>
+
+<Frame caption="Select a country before using the Number Selection Tool">
+  <img
+    src="/images/phone-numbers/buy-numbers/selection-tool-country.png"
+    alt="Country selection before using the Number Selection Tool"
+  />
+</Frame>
+
+### Open the Number Selection Tool
+
+<Steps>
+  <Step title="Find a DID group">
+    Use the filters to find the DID group you want.
+  </Step>
+
+  <Step title="Open the tool">
+    In the numbers table, locate the **Select Numbers** column and click the **#** button.
+  </Step>
+</Steps>
+
+<Frame caption="Open the Number Selection Tool">
+  <img
+    src="/images/phone-numbers/buy-numbers/open-number-selection-tool.png"
+    alt="Number Selection Tool button in the Select Numbers column"
+  />
+</Frame>
+
+### Search for specific numbers
+
+In the **Select and Reserve Numbers** window, search for **Regular** or **Gold** numbers by selecting the relevant tab and entering your search.
+
+Use the search bar to enter digits or letters.
+
+<AccordionGroup>
+  <Accordion title="Numeric search">
+    Enter digits to find numbers that contain those digits.
+
+    ```text
+    96
+    ```
+  </Accordion>
+
+  <Accordion title="Vanity search">
+    Enter letters to find vanity numbers based on keypad mappings.
+
+    ```text
+    yn
+    ```
+  </Accordion>
+</AccordionGroup>
+
+<Frame caption="Numeric search example">
+  <img
+    src="/images/phone-numbers/buy-numbers/numeric-search.png"
+    alt="Numeric search in the Number Selection Tool"
+  />
+</Frame>
+
+<Frame caption="Alphanumeric vanity search example">
+  <img
+    src="/images/phone-numbers/buy-numbers/vanity-search.png"
+    alt="Alphanumeric vanity search in the Number Selection Tool"
+  />
+</Frame>
+
+### Select and reserve numbers
+
+<Steps>
+  <Step title="Select available numbers">
+    In the **Available** list, select the checkboxes next to the numbers you want.
+  </Step>
+
+  <Step title="Move numbers to Reserved">
+    Click the right arrow to move the selected numbers to the **Reserved** list.
+  </Step>
+</Steps>
+
+<Frame caption="Select numbers and manage reservations">
+  <img
+    src="/images/phone-numbers/buy-numbers/select-and-reserve-numbers.png"
+    alt="Available and Reserved lists in the Number Selection Tool"
+  />
+</Frame>
+
+Reservations expire after a set time because inventory is live. To keep selected numbers reserved, select them in the **Reserved** list and click **Refresh reservation**.
+
+<Note>
+By default, you can add up to **10 numbers** to the reserved list at a time.
+</Note>
+
+<Frame caption="Refresh number reservation">
+  <img
+    src="/images/phone-numbers/buy-numbers/refresh-reservation.png"
+    alt="Refresh reservation option in the Number Selection Tool"
+  />
+</Frame>
+
+### Review cart and proceed to checkout
+
+After selecting numbers with the Number Selection Tool, click **Go to Cart**.
+
+The selected numbers appear in the main shopping cart, where you can review them and continue with the standard checkout process.
+
+<Frame caption="Go to Cart button">
+  <img
+    src="/images/phone-numbers/buy-numbers/go-to-cart.png"
+    alt="Go to Cart button in the Number Selection Tool"
+  />
+</Frame>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="My Numbers" href="../my-numbers">
+    Review and manage the numbers assigned to your account.
+  </Card>
+
+  <Card title="Configuration Profiles" href="../configuration-profiles">
+    Apply reusable voice, SMS, capacity, and description settings to numbers.
+  </Card>
+
+  <Card title="Capacity" href="../capacity">
+    Review capacity options for inbound calls.
+  </Card>
+
+  <Card title="Number Porting" href="../number-porting">
+    Transfer existing numbers to your DIDWW account.
+  </Card>
+</CardGroup>

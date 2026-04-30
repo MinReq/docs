@@ -14,6 +14,49 @@
         "tab": "Guides",
         "groups": [
           {
+            "group": "Phone numbers",
+            "pages": [
+              "buy-numbers",
+              {
+                "group": "My numbers",
+                "pages": [
+                  "find-and-filter-phone-numbers",
+                  "number-status-and-service-indicators",
+                  "manage-did-billing-cycles",
+                  "restore-and-renew-dids",
+                  "remove-dids"
+                ]
+              },
+              {
+                "group": "Number porting",
+                "pages": [
+                  "create-porting-request",
+                  "manage-porting-requests",
+                  "check-number-portability",
+                  "track-porting-numbers"
+                ]
+              },
+              {
+                "group": "Capacity",
+                "pages": [
+                  "flat-rate-channels",
+                  "pay-per-minute-channels",
+                  "hybrid-capacity",
+                  "change-next-capacity-mode",
+                  "set-capacity-limits",
+                  {
+                    "group": "Configuration profiles",
+                    "pages": [
+                      "create-and-manage-profiles",
+                      "create-and-manage-rules",
+                      "configuration-profile-examples"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "group": "Voice",
             "pages": [
               {

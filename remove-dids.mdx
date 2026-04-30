@@ -1,0 +1,112 @@
+---
+title: "Remove DIDs"
+---
+
+Remove a DID when the number is no longer needed. You can remove one DID from the **Actions** column or remove several DID numbers at the same time with **Batch Actions**.
+
+<Warning>
+  Removing a DID cancels service for that number. Review selected numbers before confirming removal, especially when you use batch actions.
+</Warning>
+
+## Before you begin
+
+- At least one DID number must be assigned to your account.
+- Review the selected DID numbers before confirming removal.
+- Check whether the DID number is used for active voice, SMS, Emergency Calling, A2P SMS, CNAM, or other services.
+- Export the DID list before removal if you need a record of canceled numbers.
+  <Danger>
+    If you remove a DID by mistake and the number still has active service time, it may be possible to restore it from the **Terminated** quick filter.
+  </Danger>
+
+## Remove a single DID
+
+Use this task when you need to cancel service for one DID number.
+
+<Steps>
+  <Step title="Open My Numbers">
+    Go to **Phone Numbers \> My Numbers**.
+  </Step>
+  <Step title="Find the DID">
+    Locate the DID number you want to remove.
+  </Step>
+  <Step title="Open the actions menu">
+    In the **Actions** column, open the actions menu for the DID.
+  </Step>
+  <Step title="Select Cancel service">
+    Select **Cancel service**.
+  </Step>
+  <Step title="Confirm cancellation">
+    Review the DID number, optionally provide a cancellation reason, then click **Confirm**.
+  </Step>
+</Steps>
+
+<Frame caption="Cancel service for a single DID">
+  ![Cancel service action for a single DID in My Numbers](/images/phone-numbers/my-numbers/cancel-single-did.png)
+</Frame>
+
+<Frame caption="Confirm single DID removal">
+  ![Confirmation window for removing a single DID](/images/phone-numbers/my-numbers/confirm-single-did-removal.png)
+</Frame>
+
+## Remove multiple DIDs
+
+Use this task when you need to cancel service for several DID numbers.
+
+<Steps>
+  <Step title="Open My Numbers">
+    Go to **Phone Numbers \> My Numbers**.
+  </Step>
+  <Step title="Select DIDs">
+    Select the DID numbers you want to remove.
+  </Step>
+  <Step title="Open Batch Actions">
+    Open **Batch Actions**.
+  </Step>
+  <Step title="Select Remove DIDs">
+    Select **Remove DIDs**.
+  </Step>
+  <Step title="Review selected DIDs">
+    Review the selected DID numbers in the confirmation window.
+  </Step>
+  <Step title="Confirm cancellation">
+    Optionally provide a cancellation reason, then click **Confirm**.
+  </Step>
+</Steps>
+
+<Frame caption="Remove DIDs batch action">
+  ![Remove DIDs batch action in My Numbers](/images/phone-numbers/my-numbers/remove-multiple-dids.png)
+</Frame>
+
+<Frame caption="Confirm multiple DID removal">
+  ![Confirmation window for removing multiple DIDs](/images/phone-numbers/my-numbers/confirm-multiple-did-removal.png)
+</Frame>
+
+## After removal
+
+After a DID is removed, it appears in the **Terminated** quick filter if it is still visible in your account.
+
+A manually canceled DID with remaining service time can be restored immediately without renewal. An expired DID is moved to the Service Aging Pool for 34 days and can be renewed during that period before it is permanently removed from your account.
+
+<Note>
+  Use the **Terminated** quick filter to review removed DID numbers that may still be restorable or renewable.
+</Note>
+
+## Related links
+
+<CardGroup cols={2}>
+  <Card title="Restore and renew DIDs" href="./restore-and-renew-dids">
+    Restore manually canceled DIDs or renew DID services.
+  </Card>
+
+  <Card title="Find and filter phone numbers" href="./find-and-filter-phone-numbers">
+    Find DIDs before removing them.
+  </Card>
+
+  <Card title="Manage DID billing cycles" href="./manage-did-billing-cycles">
+    Control how many times DID numbers renew automatically.
+  </Card>
+
+  <Card title="Number status and service indicators" href="./number-status-and-service-indicators">
+    Review DID status, time-left details, and service indicators.
+  </Card>
+</CardGroup>

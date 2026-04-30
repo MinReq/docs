@@ -1,0 +1,347 @@
+---
+
+title: "Number status and service indicators"
+
+description: "Review DID number statuses, time-left details, end-user verification indicators, identity information, and service icons in My Numbers."
+
+---
+
+# Number status and service indicators
+
+Use this reference to understand the status, verification, identity, and service indicators shown on the **My Numbers** page. These indicators help you identify whether a DID number is active, configured, awaiting registration, blocked, expiring, or linked to additional services.
+
+## Status and time left
+
+The **Status / Time left** column shows the current condition of each DID number and the number of days remaining before the number expires.
+
+If additional registration is required, an end-user verification icon appears next to the **Time Left** value. Use this icon to check whether end-user details are approved, pending, rejected, or not assigned.
+
+<Frame caption="Status and Time left column">
+
+  <img
+
+    src="/images/phone-numbers/my-numbers/status-time-left.png"
+
+    alt="Status and Time left column on the My Numbers page"
+
+  />
+
+</Frame>
+
+## DID number status indicators
+
+<AccordionGroup>
+
+  <Accordion title="Green circle">
+
+    The DID number is active, configured, and ready to receive incoming calls.
+
+  </Accordion>
+
+  <Accordion title="Yellow circle">
+
+    The DID number is not configured, is about to expire, or is awaiting registration. Review the number configuration, registration status, or billing cycle details.
+
+  </Accordion>
+
+  <Accordion title="Red circle">
+
+    The DID number is blocked and cannot receive incoming calls.
+
+  </Accordion>
+
+</AccordionGroup>
+
+## Billing cycle tooltip details
+
+When you hover over the DID status indicator, the tooltip may show billing cycle and expiry information.
+
+<AccordionGroup>
+
+  <Accordion title="Billing Cycles Left">
+
+    Shows the number of remaining billing cycles. If the DID number renews automatically without a fixed limit, **Unlimited** is shown.
+
+  </Accordion>
+
+  <Accordion title="Expiry Date">
+
+    Shows the exact date and time when the DID number expires. If billing cycles remain, the number renews automatically on this date.
+
+  </Accordion>
+
+</AccordionGroup>
+
+<Frame caption="DID number status tooltip">
+
+  <img
+
+    src="/images/phone-numbers/my-numbers/status-tooltip.png"
+
+    alt="DID number status tooltip with billing cycles and expiry date"
+
+  />
+
+</Frame>
+
+## End-user verification indicators
+
+End-user verification indicators show whether the end-user details assigned to a DID number meet the required registration rules.
+
+<AccordionGroup>
+
+  <Accordion title="Active">
+
+    End-user details have been verified and approved. The DID number is active.
+
+  </Accordion>
+
+  <Accordion title="Pending">
+
+    End-user details are under review. The DID number is not active yet.
+
+  </Accordion>
+
+  <Accordion title="Rejected / Not assigned">
+
+    The DID number requires verified end-user details before activation. Assign or update the end-user details and resubmit them for verification.
+
+  </Accordion>
+
+</AccordionGroup>
+
+When you hover over the verification icon, you can view end-user details, check the verification status, assign end-user details, or open the verification details page.
+
+<Note>
+
+If previously approved and active end-user details are assigned, and the registration requirements match the DID number’s regulatory requirements, end-user verification is approved automatically after assignment.
+
+</Note>
+
+<Frame caption="End-user verification tooltip">
+
+  <img
+
+    src="/images/phone-numbers/my-numbers/end-user-verification-tooltip.png"
+
+    alt="End-user verification tooltip on the My Numbers page"
+
+  />
+
+</Frame>
+
+## Identity column
+
+The **Identity** column shows the identity assigned to a DID number.
+
+An identity is required for certain services, such as Emergency Calling, A2P SMS, CNAM, or regulatory registration. The same identity is used for all services connected to that number.
+
+<Frame caption="Identity column">
+
+  <img
+
+    src="/images/phone-numbers/my-numbers/identity-column.png"
+
+    alt="Identity column on the My Numbers page"
+
+  />
+
+</Frame>
+
+<Info>
+
+If a service requires identity verification, assign the correct identity before creating or updating the service request.
+
+</Info>
+
+## Services column
+
+The **Services** column shows icons for additional services available for a DID number, such as Emergency Calling, A2P SMS, and CNAM.
+
+If an icon is not shown in the **Services** column, the corresponding service is not supported for that DID number.
+
+<Frame caption="Services column">
+
+  <img
+
+    src="/images/phone-numbers/my-numbers/services-column.png"
+
+    alt="Services column on the My Numbers page"
+
+  />
+
+</Frame>
+
+## Service icon status indicators
+
+<AccordionGroup>
+
+  <Accordion title="Gray service icon">
+
+    The service is supported but not enabled. To activate the service, assign end-user details and create the required service request.
+
+  </Accordion>
+
+  <Accordion title="Green service icon">
+
+    The service is active.
+
+  </Accordion>
+
+  <Accordion title="Yellow service icon">
+
+    End-user details are assigned, and the service request is in **New** or **In Process** status.
+
+  </Accordion>
+
+  <Accordion title="Red service icon">
+
+    For Emergency Calling and A2P SMS, verification is in **Changes Required** status. For CNAM, the request to remove CNAM has been received and is pending closure.
+
+  </Accordion>
+
+</AccordionGroup>
+
+<Frame caption="Service status tooltip">
+
+  <img
+
+    src="/images/phone-numbers/my-numbers/service-status-tooltip.png"
+
+    alt="Service status tooltip on the My Numbers page"
+
+  />
+
+</Frame>
+
+## Emergency Calling statuses
+
+<AccordionGroup>
+
+  <Accordion title="Not configured">
+
+    The service is not configured for the DID number.
+
+  </Accordion>
+
+  <Accordion title="New">
+
+    The request has been submitted for review.
+
+  </Accordion>
+
+  <Accordion title="In Process">
+
+    The request is under review.
+
+  </Accordion>
+
+  <Accordion title="Active">
+
+    The Emergency Calling service is active.
+
+  </Accordion>
+
+  <Accordion title="Changes Required">
+
+    Emergency Calling verification must be updated and resubmitted.
+
+  </Accordion>
+
+</AccordionGroup>
+
+## A2P SMS statuses
+
+<AccordionGroup>
+
+  <Accordion title="Not configured">
+
+    The service is not configured for the DID number.
+
+  </Accordion>
+
+  <Accordion title="New">
+
+    The request has been submitted for review.
+
+  </Accordion>
+
+  <Accordion title="In Process">
+
+    The request is under review.
+
+  </Accordion>
+
+  <Accordion title="Active">
+
+    The A2P SMS service is active.
+
+  </Accordion>
+
+  <Accordion title="Changes Required">
+
+    The A2P SMS campaign must be updated and resubmitted.
+
+  </Accordion>
+
+</AccordionGroup>
+
+## CNAM statuses
+
+<AccordionGroup>
+
+  <Accordion title="Not configured">
+
+    The service is not configured for the DID number.
+
+  </Accordion>
+
+  <Accordion title="Pending">
+
+    The request is under review.
+
+  </Accordion>
+
+  <Accordion title="Active">
+
+    The CNAM service is active.
+
+  </Accordion>
+
+  <Accordion title="Cancelation Pending">
+
+    The request to cancel the CNAM service is in progress.
+
+  </Accordion>
+
+</AccordionGroup>
+
+## Related links
+
+<CardGroup cols={2}>
+
+  <Card title="Find and filter phone numbers" href="./find-and-filter-phone-numbers">
+
+    Search, filter, export, and use batch actions for DID numbers.
+
+  </Card>
+
+  <Card title="Manage DID billing cycles" href="./manage-did-billing-cycles">
+
+    Set how many times DID numbers renew automatically before expiration.
+
+  </Card>
+
+  <Card title="Emergency Calling" href="../../voice/emergency-calling">
+
+    Configure Emergency Calling for supported DID numbers.
+
+  </Card>
+
+  <Card title="CNAM" href="../../voice/cnam">
+
+    Configure Caller Name Delivery services.
+
+  </Card>
+
+</CardGroup>

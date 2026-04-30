@@ -1,0 +1,293 @@
+---
+
+title: "Manage DID billing cycles"
+
+description: "Set how many times DID numbers renew automatically before expiration."
+
+---
+
+Billing cycles define how many times a DID number renews automatically before its subscription expires. Use this guide to set a fixed number of billing cycles or keep DID numbers on unlimited renewal.
+
+## Before you begin
+
+- At least one DID number must be assigned to your account.
+
+- Select only the DID numbers whose renewal behavior should change.
+
+- Review the current **Status / Time left** value before changing billing cycles.
+
+- Make sure your account has enough balance for future renewals.
+
+<Note>
+
+  Newly purchased DID numbers use **Unlimited** billing cycles by default.
+
+</Note>
+
+## How billing cycles work
+
+On the expiration date, the remaining billing cycle count decreases by one. The DID number renews automatically while billing cycles remain.
+
+When the remaining billing cycle count reaches zero, the DID number does not renew automatically. The number appears in the **Expiring Soon** quick filter before service removal.
+
+<AccordionGroup>
+
+  <Accordion title="Unlimited billing cycles">
+
+    The DID number renews automatically without a fixed renewal limit. Leave the billing cycle field empty to set unlimited billing cycles.
+
+  </Accordion>
+
+  <Accordion title="Fixed billing cycles">
+
+    The DID number renews only for the number of billing cycles you set. Each renewal reduces the remaining billing cycle count by one.
+
+  </Accordion>
+
+  <Accordion title="Maximum billing cycle count">
+
+    The maximum billing cycle count is **999**.
+
+  </Accordion>
+
+  <Accordion title="Expiring Soon">
+
+    The DID number appears in **Expiring Soon** when the remaining number of billing cycles is set to zero.
+
+  </Accordion>
+
+</AccordionGroup>
+
+<Info>
+
+  Use the **Expiring Soon** quick filter in **My Numbers** to find DID numbers that will not renew automatically.
+
+</Info>
+
+## Set billing cycles
+
+<Steps>
+
+  <Step title="Open My Numbers">
+
+    Go to **Phone Numbers > My Numbers**.
+
+  </Step>
+
+  <Step title="Select DID numbers">
+
+    Select the DID numbers for which you want to set billing cycles.
+
+  </Step>
+
+  <Step title="Open Batch Actions">
+
+    Open **Batch Actions**.
+
+  </Step>
+
+  <Step title="Select Set Number of Billing Cycles">
+
+    Select **Set Number of Billing Cycles**.
+
+  </Step>
+
+  <Step title="Enter the billing cycle count">
+
+    Enter the number of billing cycles for which the DID numbers should renew automatically.
+
+  </Step>
+
+  <Step title="Confirm the change">
+
+    Click **Confirm**.
+
+  </Step>
+
+</Steps>
+
+<Frame caption="Set Number of Billing Cycles batch action">
+
+  <img
+
+    src="/images/phone-numbers/my-numbers/set-billing-cycles.png"
+
+    alt="Set Number of Billing Cycles batch action in My Numbers"
+
+  />
+
+</Frame>
+
+## Set unlimited billing cycles
+
+Use unlimited billing cycles when DID numbers should continue renewing automatically without a fixed renewal limit.
+
+<Steps>
+
+  <Step title="Open My Numbers">
+
+    Go to **Phone Numbers > My Numbers**.
+
+  </Step>
+
+  <Step title="Select DID numbers">
+
+    Select the DID numbers that should renew automatically without a fixed limit.
+
+  </Step>
+
+  <Step title="Open Batch Actions">
+
+    Open **Batch Actions**.
+
+  </Step>
+
+  <Step title="Select Set Number of Billing Cycles">
+
+    Select **Set Number of Billing Cycles**.
+
+  </Step>
+
+  <Step title="Leave the billing cycle field empty">
+
+    Leave the billing cycle field empty to set unlimited billing cycles.
+
+  </Step>
+
+  <Step title="Confirm the change">
+
+    Click **Confirm**.
+
+  </Step>
+
+</Steps>
+
+<Note>
+
+  An empty billing cycle field means unlimited renewal. Do not enter `0` unless the DID number should stop renewing automatically.
+
+</Note>
+
+## Set a DID to expire
+
+Set the billing cycle count to `0` when the DID number should not renew automatically.
+
+<Warning>
+
+  Setting the billing cycle count to `0` can cause the DID number to stop renewing and move toward service removal. Use this only when you intend to let the number expire.
+
+</Warning>
+
+<Steps>
+
+  <Step title="Open My Numbers">
+
+    Go to **Phone Numbers > My Numbers**.
+
+  </Step>
+
+  <Step title="Select DID numbers">
+
+    Select the DID numbers that should stop renewing automatically.
+
+  </Step>
+
+  <Step title="Open Batch Actions">
+
+    Open **Batch Actions**.
+
+  </Step>
+
+  <Step title="Select Set Number of Billing Cycles">
+
+    Select **Set Number of Billing Cycles**.
+
+  </Step>
+
+  <Step title="Enter 0">
+
+    Enter `0` as the billing cycle count.
+
+  </Step>
+
+  <Step title="Confirm the change">
+
+    Click **Confirm**.
+
+  </Step>
+
+</Steps>
+
+## Review billing cycle details
+
+You can review billing cycle details from the **Status / Time left** column.
+
+<Steps>
+
+  <Step title="Open My Numbers">
+
+    Go to **Phone Numbers > My Numbers**.
+
+  </Step>
+
+  <Step title="Find the DID number">
+
+    Search or filter the list to find the DID number.
+
+  </Step>
+
+  <Step title="Hover over the status indicator">
+
+    Hover over the DID status indicator in the **Status / Time left** column.
+
+  </Step>
+
+  <Step title="Review billing details">
+
+    Review **Billing Cycles Left** and **Expiry Date**.
+
+  </Step>
+
+</Steps>
+
+<Frame caption="Billing cycle details in the status tooltip">
+
+  <img
+
+    src="/images/phone-numbers/my-numbers/status-tooltip.png"
+
+    alt="Billing Cycles Left and Expiry Date in the DID number status tooltip"
+
+  />
+
+</Frame>
+
+## Related links
+
+<CardGroup cols={2}>
+
+  <Card title="Find and filter phone numbers" href="./find-and-filter-phone-numbers">
+
+    Find DID numbers before changing billing cycles.
+
+  </Card>
+
+  <Card title="Number status and service indicators" href="./number-status-and-service-indicators">
+
+    Review status icons, time-left details, and billing cycle tooltip values.
+
+  </Card>
+
+  <Card title="Restore and renew DIDs" href="./restore-and-renew-dids">
+
+    Restore manually canceled DIDs or renew DID services.
+
+  </Card>
+
+  <Card title="Remove DIDs" href="./remove-dids">
+
+    Cancel one or more DID numbers that are no longer needed.
+
+  </Card>
+
+</CardGroup>
