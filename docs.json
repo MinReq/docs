@@ -11,7 +11,11 @@
   "navigation": {
     "products": [
       {
-        "product": "Untitled Product",
+        "product": "DIDWW",
+        "color": {
+          "light": "#023f7f",
+          "dark": "#023f7f"
+        },
         "tabs": [
           {
             "tab": "Guides",
