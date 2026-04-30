@@ -59,6 +59,40 @@
                 ]
               }
             ]
+          },
+          {
+            "group": "Users",
+            "pages": [
+              "manage-users",
+              "manage-app-devices"
+            ]
+          },
+          {
+            "group": "Contact methods",
+            "pages": [
+              "how-contact-methods-work",
+              "manage-app-configurations",
+              "create-sip-account-contact-methods",
+              "create-pstn-forwarding-contact-methods",
+              "create-sip-forwarding-contact-methods",
+              "create-email-contact-methods",
+              "manage-contact-methods"
+            ]
+          },
+          {
+            "group": "Numbers",
+            "pages": [
+              "manage-phone-numbers",
+              "manage-internal-numbers"
+            ]
+          },
+          "time-schedules",
+          {
+            "group": "Delivery methods",
+            "pages": [
+              "manage-delivery-methods",
+              "review-delivery-logs"
+            ]
           }
         ]
       },
