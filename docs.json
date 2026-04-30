@@ -12,7 +12,8 @@
     "tabs": [
       {
         "tab": "Guides",
-        "groups": [
+        "pages": [
+          "introduction-1",
           {
             "group": "Phone numbers",
             "pages": [
