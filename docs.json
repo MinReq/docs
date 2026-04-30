@@ -9,27 +9,45 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "products": [
       {
-        "tab": "Guides"
-      },
-      {
-        "tab": "API reference",
-        "openapi": "DIDWWAPI32026-04-16(Latest).openapi.yaml",
-        "pages": [
+        "product": "Untitled Product",
+        "tabs": [
           {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
+            "tab": "Guides",
+            "groups": [
+              {
+                "group": "Voice",
+                "pages": [
+                  {
+                    "group": "Inbound Trunks",
+                    "pages": [
+                      "how-inbound-trunk-work",
+                      "create-and-manage-sip-trunks",
+                      "sip-trunk-settings",
+                      "create-and-manage-pstn-trunks",
+                      "create-and-manager-trunk-groups",
+                      "assign-a-voice-trunk",
+                      "inbound-number-lists"
+                    ]
+                  }
+                ]
+              }
             ]
           },
           {
-            "group": "Endpoint examples",
+            "tab": "API reference",
+            "openapi": "DIDWWAPI32026-04-16(Latest).openapi.yaml",
             "pages": [
-              "untitled-page"
+              {
+                "group": "API documentation",
+                "openapi": "DIDWWAPI32026-04-16(Latest).openapi.yaml",
+                "pages": [
+                  "get-countries"
+                ]
+              }
             ]
-          },
-          "test"
+          }
         ]
       }
     ]
@@ -71,6 +89,10 @@
     }
   },
   "api": {
-    "openapi": "/DIDWWAPI32026-04-16(Latest).openapi.yaml"
+    "openapi": "/DIDWWAPI32026-04-16(Latest).openapi.yaml",
+    "playground": {
+      "display": "simple",
+      "proxy": false
+    }
   }
 }
