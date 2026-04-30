@@ -34,31 +34,19 @@
       },
       {
         "tab": "phone.systems™",
-        "products": [
+        "versions": [
           {
-            "product": "Untitled Product",
+            "version": "Untitled Version",
             "pages": [
               "untitled-page",
               "untitled-page"
             ]
           },
           {
-            "product": "Untitled Product",
-            "tabs": [
-              {
-                "tab": "Untitled Tab",
-                "pages": [
-                  "untitled-page",
-                  "untitled-page"
-                ]
-              },
-              {
-                "tab": "Untitled Tab",
-                "pages": [
-                  "untitled-page",
-                  "untitled-page"
-                ]
-              }
+            "version": "Untitled Version",
+            "pages": [
+              "untitled-page",
+              "untitled-page"
             ]
           }
         ]
