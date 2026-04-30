@@ -1,4 +1,380 @@
 ---
-title: 'How call flows work'
+title: "How call flows work"
+description: "Understand how phone.systems™ call flows use workspaces, objects, cables, tabs, and routing logic to handle calls."
 ---
 
+Call flows define how phone.systems™ receives, routes, processes, and delivers calls. A call flow is built in a visual workspace by adding objects, configuring each object, and connecting objects with cables.
+
+Use this page to understand the call flow model before you create objects, connect routing paths, or organize complex flows across multiple workspace pages.
+
+<Info>
+Call flows are the main routing model in phone.systems™. They determine what happens when a call enters the system and how the call moves between objects.
+</Info>
+
+## Call flow model
+
+A call flow is a visual routing map. Each call enters the flow through an entry object, moves through connected objects, and follows the routing path defined by the cables between those objects.
+
+A typical call flow includes:
+
+- an entry object, such as a **Phone Number** or **Internal Number**
+- one or more routing or processing objects, such as **Voice Menu**, **Ring Group**, **Queue**, or **Time Router**
+- destination or delivery objects, such as **Voicemail**, **Fax**, **Call Recorder**, or **Notification**
+- cables that connect objects and define the call path
+
+For example, a simple inbound call flow might route a call like this:
+
+```text
+Phone Number -> Ring Group -> Voicemail
+```
+
+In this flow:
+
+<Steps>
+  <Step title="The call enters the flow">
+    The **Phone Number** object receives the inbound call.
+  </Step>
+
+  <Step title="The call is routed to a destination">
+    The **Ring Group** object sends the call to one or more users, contact methods, or destinations.
+  </Step>
+
+  <Step title="The call follows the fallback path">
+    If the call is not answered, the call continues to **Voicemail**.
+  </Step>
+</Steps>
+
+More complex flows can include voice menus, queues, time-based routing, caller-based routing, recordings, notifications, fax handling, and forwarding between call flows.
+
+## Workspace
+
+The workspace is the visual area where call flows are built. You add objects to the workspace, place them in a logical order, and connect objects to define the call path.
+
+Use the workspace to:
+
+- add call flow objects
+- move objects into a readable layout
+- connect objects with cables
+- organize larger call flows into multiple pages
+- review how calls move through the flow
+
+<Frame caption="Call flow workspace with objects connected by cables">
+  <img src="/images/phone-systems/call-flows/workspace-overview.png" alt="Call flow workspace with objects connected by cables" />
+</Frame>
+
+The workspace should show the call path clearly. Place entry objects near the beginning of the flow and keep related routing branches close together so the flow is easier to read and maintain.
+
+<Tip>
+For large or complex call flows, use workspace pages to separate routing areas such as Main, Sales, Support, and After hours.
+</Tip>
+
+## Objects
+
+Objects are the building blocks of a call flow. Each object performs one function in the routing process.
+
+<CardGroup cols={2}>
+  <Card title="Phone Number object" href="./objects/phone-number">
+    Receives inbound calls on an assigned phone number.
+  </Card>
+
+  <Card title="Internal Number object" href="./objects/internal-number">
+    Receives internal calls through an extension number.
+  </Card>
+
+  <Card title="Ring Group object" href="./objects/ring-group">
+    Routes calls to multiple users, contact methods, or destinations.
+  </Card>
+
+  <Card title="Voice Menu object" href="./objects/voice-menu">
+    Plays an IVR prompt and routes calls based on dial pad input.
+  </Card>
+
+  <Card title="Queue object" href="./objects/queue">
+    Places callers in a queue before routing them to available members.
+  </Card>
+
+  <Card title="Time Router object" href="./objects/time-router">
+    Routes calls based on schedules, business hours, or exceptions.
+  </Card>
+</CardGroup>
+
+Each object may have input and output sockets. These sockets are used to connect objects with cables and define the path a call follows through the flow.
+
+## Object configuration
+
+When you add an object to the workspace, phone.systems™ opens the object configuration panel. The fields in the panel depend on the object type.
+
+For example:
+
+- a **Phone Number** object requires a phone number
+- a **Ring Group** object requires one or more destinations
+- a **Voice Menu** object requires menu options and routing destinations
+- a **Time Router** object requires schedule conditions
+- a **Voicemail** object requires delivery settings
+
+<Frame caption="Object configuration panel">
+  <img src="/images/phone-systems/call-flows/object-configuration-panel.png" alt="Object configuration panel in a phone.systems call flow" />
+</Frame>
+
+Object settings define what the object does when a call reaches it. After configuring an object, connect it to the next object so the call can continue through the flow.
+
+<CardGroup cols={2}>
+  <Card title="Add and configure objects" href="./add-and-configure-objects">
+    Learn how to add objects to the workspace and update object settings.
+  </Card>
+
+  <Card title="Call flow object reference" href="./objects">
+    Review available objects, their purpose, fields, and routing behavior.
+  </Card>
+</CardGroup>
+
+## Cables
+
+Cables connect objects and define the call path. A call moves from one object to another through the connected cable.
+
+Most objects have connection points that let you connect outputs to the next object in the flow. Some objects have multiple outputs because the call can follow different paths.
+
+For example, a **Voice Menu** object can route calls based on caller input:
+
+```text
+Voice Menu
+├── Press 1 -> Sales Ring Group
+├── Press 2 -> Support Queue
+└── No input -> Voicemail
+```
+
+A **Time Router** object can route calls based on schedule conditions:
+
+```text
+Time Router
+├── Business hours -> Ring Group
+└── Closed hours -> Voicemail
+```
+
+<Tip>
+Keep cable paths easy to follow. Avoid placing related objects far apart or crossing many cables, especially in large call flows.
+</Tip>
+
+## Entry objects
+
+Entry objects are where calls enter a call flow.
+
+| Object | Purpose |
+| --- | --- |
+| Phone Number | Receives external inbound calls on an assigned phone number. |
+| Internal Number | Receives internal calls through an extension number. |
+
+A call flow usually starts with one or more entry objects. Each entry object should connect to the next object that decides what happens to the call.
+
+Example:
+
+```text
+Phone Number -> Time Router -> Ring Group
+```
+
+In this example, the call enters through a phone number, is checked against a schedule, and then routes to a ring group during the matching time condition.
+
+## Routing objects
+
+Routing objects decide where the call should go next. They are used when the call path depends on a condition, caller choice, time schedule, or caller ID.
+
+| Object | Purpose |
+| --- | --- |
+| Ring Group | Sends calls to multiple destinations. |
+| Voice Menu | Routes calls based on caller input. |
+| Caller Router | Routes calls based on the caller’s phone number or CLI. |
+| Blocklist | Blocks calls from selected caller IDs, empty caller IDs, or alphabetical caller IDs. |
+| Queue | Places callers in a queue before routing them to members. |
+| Time Router | Routes calls based on schedules, days, or times. |
+| Forwarding | Sends calls between call flows. |
+
+Routing objects are useful when one call flow needs several possible outcomes.
+
+<Info>
+Routing objects are usually placed after an entry object. They decide which path the call should follow next.
+</Info>
+
+## Destination and delivery objects
+
+Some objects send the call, recording, fax, notification, or voicemail to a destination.
+
+| Object | Purpose |
+| --- | --- |
+| Voicemail | Lets callers leave voicemail messages and sends them to a configured delivery destination. |
+| Fax | Receives fax messages and stores them as PDF files. |
+| Call Recorder | Records calls in the call flow. |
+| Notification | Sends email alerts when selected events occur. |
+| Forwarding | Sends the call to another call flow. |
+
+These objects often depend on resources configured elsewhere, such as contact methods, delivery methods, email addresses, or storage integrations.
+
+## Workspace pages and tabs
+
+Large call flows can be split across multiple workspace pages. Pages help keep complex systems readable by separating routing logic into smaller areas.
+
+Use multiple pages when:
+
+- the call flow contains many objects
+- different departments need separate routing logic
+- several call paths are hard to read on one workspace
+- the same call flow includes multiple branches such as Sales, Support, and Billing
+
+Example structure:
+
+```text
+Main page
+├── Sales page
+├── Support page
+└── Billing page
+```
+
+The main page can receive the inbound call and route it to department-specific pages. Each department page can then contain its own ring groups, queues, voicemail, and fallback logic.
+
+<Card title="Organize call flows with tabs and pages" href="./tabs-and-multiple-pages">
+  Learn how to split complex call flows across workspace pages and connect objects between pages.
+</Card>
+
+## Cross-page connections
+
+Objects can be connected across workspace pages. When a cable connects objects on different pages, phone.systems™ represents the connection with a cross-page cable indicator.
+
+Cross-page connections help keep complex flows organized, but they should be used carefully. Too many cross-page connections can make the routing path harder to follow.
+
+Use clear page names, such as:
+
+- **Main**
+- **Sales**
+- **Support**
+- **After hours**
+- **Voicemail**
+- **Outbound**
+
+<Warning>
+Avoid using too many cross-page connections in one flow. If routing becomes hard to follow, split the logic into smaller call flows or simplify the page layout.
+</Warning>
+
+## Common call flow patterns
+
+Use these examples to understand common ways objects can be combined.
+
+<AccordionGroup>
+  <Accordion title="Direct routing">
+    Use direct routing when a number should send calls to one destination.
+
+    ```text
+    Phone Number -> Ring Group
+    ```
+
+    The Phone Number object receives the call and immediately routes it to a Ring Group.
+  </Accordion>
+
+  <Accordion title="Fallback to voicemail">
+    Use voicemail fallback when unanswered calls should be recorded and delivered.
+
+    ```text
+    Phone Number -> Ring Group -> Voicemail
+    ```
+
+    The Ring Group attempts to connect the call. If the call is not answered, the call continues to Voicemail.
+  </Accordion>
+
+  <Accordion title="IVR routing">
+    Use IVR routing when callers should choose a department or destination.
+
+    ```text
+    Phone Number -> Voice Menu
+                    ├── Sales -> Ring Group
+                    ├── Support -> Queue
+                    └── Billing -> Ring Group
+    ```
+
+    The Voice Menu plays an audio prompt and routes the call based on the caller’s dial pad input.
+  </Accordion>
+
+  <Accordion title="Time-based routing">
+    Use time-based routing when calls should behave differently during business hours and after hours.
+
+    ```text
+    Phone Number -> Time Router
+                    ├── Business hours -> Ring Group
+                    └── Closed hours -> Voicemail
+    ```
+
+    The Time Router checks the configured schedule and sends the call to the matching route.
+  </Accordion>
+
+  <Accordion title="Caller-based routing">
+    Use caller-based routing when calls should be handled differently depending on caller ID.
+
+    ```text
+    Phone Number -> Caller Router
+                    ├── VIP callers -> Priority Ring Group
+                    ├── Blocked callers -> Blocklist
+                    └── Other callers -> Main Ring Group
+    ```
+
+    The Caller Router checks the caller ID and sends the call to the matching path.
+  </Accordion>
+</AccordionGroup>
+
+## Design considerations
+
+A clear call flow is easier to troubleshoot and maintain. When building call flows, keep these practices in mind.
+
+### Use descriptive object names
+
+Use names that describe the object’s purpose. For example, use **Sales Ring Group** instead of only **Ring Group**.
+
+### Keep the main route visible
+
+Place the most common call path in a clear left-to-right or top-to-bottom order. Move less common fallback paths, such as voicemail or after-hours routing, to nearby branches.
+
+### Group related objects
+
+Keep related objects close together. For example, place a Voice Menu near its Sales, Support, and Billing routes.
+
+### Avoid unnecessary complexity
+
+Do not add extra objects when a simpler flow would work. A smaller flow is easier to read, test, and troubleshoot.
+
+### Use pages for large flows
+
+If a flow becomes difficult to read, split it into workspace pages. Use page names that match the routing logic, such as **Main**, **Sales**, **Support**, or **After hours**.
+
+## When to use separate call flows
+
+Use separate call flows when different teams, departments, customers, or routing scenarios need independent configuration.
+
+Separate call flows may be useful for:
+
+- different business locations
+- separate departments
+- different customer groups
+- testing new routing logic
+- separating inbound and outbound routing logic
+- isolating complex call handling scenarios
+
+<Info>
+Use separate call flows when the routing logic is easier to understand as an independent flow. Use workspace pages when the logic belongs to the same overall flow but needs better visual organization.
+</Info>
+
+## Related links
+
+<CardGroup cols={2}>
+  <Card title="Use the call flow control panel" href="./control-panel">
+    Create, edit, delete, search, and manage call flows in the workspace.
+  </Card>
+
+  <Card title="Add and configure objects" href="./add-and-configure-objects">
+    Add objects to the workspace and configure their settings.
+  </Card>
+
+  <Card title="Call flow object reference" href="./objects">
+    Review object behavior, fields, and routing options.
+  </Card>
+
+  <Card title="Call flow examples" href="./usage-examples">
+    Review common routing patterns and workspace layouts.
+  </Card>
+</CardGroup>
+```
