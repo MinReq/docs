@@ -34,14 +34,22 @@
       },
       {
         "tab": "phone.systems™",
-        "menu": [
+        "dropdowns": [
           {
-            "item": "Untitled Item",
-            "dropdowns": [
+            "dropdown": "Untitled Dropdown",
+            "groups": [
               {
-                "dropdown": "Untitled Dropdown",
+                "group": "Untitled Group",
                 "pages": [
-                  "untitled-page"
+                  "untitled-page1",
+                  "untitled-page2"
+                ]
+              },
+              {
+                "group": "untitle group2",
+                "pages": [
+                  "untitled-page1-1",
+                  "untitled-page2-1"
                 ]
               }
             ]
