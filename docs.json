@@ -200,6 +200,41 @@
               "re-submit-end-user-details",
               "track-verifications"
             ]
+          },
+          {
+            "group": "Billing",
+            "pages": [
+              "overview-5",
+              "getting-started-1",
+              {
+                "group": "Payment methods",
+                "pages": [
+                  "add-and-manage-credit-cards",
+                  "add-funds-by-wire-transfer",
+                  "add-fund-with-pay-pal",
+                  "configure-payment-automation-and-notification"
+                ]
+              },
+              {
+                "group": "Billing history",
+                "pages": [
+                  "billing-reports",
+                  "payments",
+                  "orders",
+                  "invoices"
+                ]
+              },
+              {
+                "group": "Billing and pricing",
+                "pages": [
+                  "service-coverage-and-pricing",
+                  "download-price-lists",
+                  "invoices-and-receipts",
+                  "origin-based-pricing",
+                  "vat-and-tax-identification-numbers"
+                ]
+              }
+            ]
           }
         ]
       },
