@@ -44,15 +44,15 @@
                   "pay-per-minute-channels",
                   "hybrid-capacity",
                   "change-next-capacity-mode",
-                  "set-capacity-limits",
-                  {
-                    "group": "Configuration profiles",
-                    "pages": [
-                      "create-and-manage-profiles",
-                      "create-and-manage-rules",
-                      "configuration-profile-examples"
-                    ]
-                  }
+                  "set-capacity-limits"
+                ]
+              },
+              {
+                "group": "Configuration profiles",
+                "pages": [
+                  "create-and-manage-profiles",
+                  "create-and-manage-rules",
+                  "configuration-profile-examples"
                 ]
               }
             ]
@@ -114,7 +114,12 @@
               },
               {
                 "group": "CNAM",
-                "pages": []
+                "pages": [
+                  "enable-cnam-in",
+                  "enable-cnam-out",
+                  "send-cnam-out-via-sip-from-header",
+                  "remove-cnam-out"
+                ]
               }
             ]
           }
