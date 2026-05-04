@@ -166,6 +166,40 @@
                 ]
               }
             ]
+          },
+          {
+            "group": "Logs & analytics",
+            "pages": [
+              "statistics",
+              "reports",
+              {
+                "group": "Call logs",
+                "pages": [
+                  "inbound-call-logs",
+                  "outbound-call-logs"
+                ]
+              },
+              {
+                "group": "SMS logs",
+                "pages": [
+                  "inbound-sms-logs",
+                  "outbound-sms-logs"
+                ]
+              },
+              "exports"
+            ]
+          },
+          {
+            "group": "Identities & Addresses",
+            "pages": [
+              "overview-4",
+              "getting-started",
+              "create-and-manage-identities",
+              "create-and-manage-addresses",
+              "submit-end-user-details",
+              "re-submit-end-user-details",
+              "track-verifications"
+            ]
           }
         ]
       },
