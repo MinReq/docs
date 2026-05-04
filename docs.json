@@ -31,6 +31,7 @@
               {
                 "group": "Number porting",
                 "pages": [
+                  "overview",
                   "create-porting-request",
                   "manage-porting-requests",
                   "check-number-portability",
@@ -40,6 +41,7 @@
               {
                 "group": "Capacity",
                 "pages": [
+                  "overview-1",
                   "flat-rate-channels",
                   "pay-per-minute-channels",
                   "hybrid-capacity",
@@ -50,6 +52,7 @@
               {
                 "group": "Configuration profiles",
                 "pages": [
+                  "how-configuration-profiles-work",
                   "create-and-manage-profiles",
                   "create-and-manage-rules",
                   "configuration-profile-examples"
@@ -63,6 +66,7 @@
               {
                 "group": "Inbound Trunks",
                 "pages": [
+                  "inbound-trunks-overview",
                   "how-inbound-trunk-work",
                   "create-and-manage-sip-trunks",
                   "sip-trunk-settings",
@@ -115,10 +119,50 @@
               {
                 "group": "CNAM",
                 "pages": [
+                  "overview-2",
                   "enable-cnam-in",
                   "enable-cnam-out",
                   "send-cnam-out-via-sip-from-header",
                   "remove-cnam-out"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "SMS",
+            "pages": [
+              {
+                "group": "SMS trunks",
+                "pages": [
+                  "overview-3",
+                  "how-sms-trunks-work",
+                  "create-sms-to-email-trunks",
+                  "create-http-in-trunks",
+                  "create-http-out-trunks",
+                  "create-smpp-esme-trunks",
+                  "create-smpp-smsc-trunks",
+                  "create-sms-trunk-groups",
+                  "assign-sms-trunks",
+                  {
+                    "group": "Technical specifications",
+                    "pages": [
+                      "smpp-specifications",
+                      "http-specifications",
+                      "inbound-sms-guidelines"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "A2P campaigns",
+                "pages": [
+                  "a2p-overview",
+                  "how-a2-p-campaigns-work",
+                  "create-a2-p-campaigns",
+                  "edit-a2-p-campaigns",
+                  "resubmit-a2-p-campaigns",
+                  "send-sms-from-a2-p-campaigns",
+                  "close-a2p-campaigns"
                 ]
               }
             ]
